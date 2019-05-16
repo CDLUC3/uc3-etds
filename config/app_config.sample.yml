@@ -1,0 +1,55 @@
+# Stage configs
+stage:
+    sftphost: 
+    private_key: 
+    mysqlhost: 
+    mysqluser: 
+    mysqlpw: 
+    mysqldbname: 
+    mrthost: https://merritt-stage.cdlib.org/
+    mrtuser: 
+    mrtpw: 
+    mrt_coll: merritt_demo_content
+    etddb: /home/uc3/dev/etds/db/etd.db
+    log_level: INFO
+    log_file: /home/uc3/dev/etds/logs/etds.log
+    error_notify: 'email@example.com'
+    marc_dir: /home/uc3/dev/etds/marc/
+    rpt_dir: /home/uc3/dev/etds/reports/
+    tmp_dir: /home/uc3/dev/etds/tmp/
+    xsl_dir: /home/uc3/dev/etds/xsl/
+    zip_dir: /home/uc3/dev/etds/zipfiles/
+    etd_xsl_file: /home/uc3/dev/etdtest.xsl
+    ns_xsl_file: /home/uc3/dev/etds/xsl/namespace.xsl
+
+# Production configs
+prod:
+    sftphost: 
+    private_key:
+    mysqlhost: 
+    mysqluser: 
+    mysqlpw: 
+    mysqldbname: 
+    mrthost: https://merritt.cdlib.org/
+    mrtuser: 
+    mrtpw: 
+    mrt_coll: cdl_uc3_etdreports_content
+    etddb: /home/uc3/etds/db/etd.db
+    log_level: INFO
+    log_file: /home/uc3/etds/logs/etds.log
+    error_notify: 'user@example.com'
+    marc_dir: /home/uc3/etds/marc/
+    rpt_dir: /home/uc3/etds/reports/
+    tmp_dir: /home/uc3/etds/tmp/
+    xsl_dir: /home/uc3/etds/xsl/
+    zip_dir: /home/uc3/etds/zipfiles/
+    etd_xsl_file: /home/uc3/etds/xsl/etd.xsl
+    ns_xsl_file: /home/uc3/etds/xsl/namespace.xsl
+
+sftpMARCdirs:
+    uci: ucietd
+    ucla: uclaetd/marc
+
+sftpETDdirs:
+    proquest: proquest
+    ucla: uclaetd/etds

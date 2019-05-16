@@ -1,0 +1,9 @@
+app_config.yml
+etd.db
+saxon9he.jar
+logs/*.*
+*.pyc
+*.zip
+*.xml
+*.mrc
+*.list
