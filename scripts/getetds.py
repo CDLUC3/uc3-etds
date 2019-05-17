@@ -21,7 +21,6 @@ from poster.encode import multipart_encode
 import re
 import shutil
 import sqlite3
-#import subprocess
 import sys
 import time
 import zipfile
