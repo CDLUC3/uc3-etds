@@ -1,9 +1,9 @@
 import sqlstatements
 
 # used by getetds.py
-PQMETADATAXSL = '/home/uc3/etds/xsl/manifest.xsl'
+PQMETADATAXSL = '/home/uc3/uc3-etds/xsl/manifest.xsl'
 # used by pq-gateway.py
-PQAPIXSL = '/home/uc3/dev/etds/xsl/pqetd.xsl'
+PQAPIXSL = '/home/uc3/uc3-etds/xsl/pqetd.xsl'
 # used by createmarc.py
 CSVQRYNAME = {'ucla':sqlstatements.report_ucla,
               'uci':sqlstatements.report_uci,
@@ -35,12 +35,12 @@ PQ_CAMPUS_NAMES = {'Merced': 'ucmerced',
                    'Irvine' : 'uci',
                    'Santa Cruz' : 'ucsc'}
 
-MRT_ESCHOL_PQ = '/home/uc3/etds/xsl/mrt-eschol-pq.xml'
-PQ_MERRITT_MATCH = '/home/uc3/etds/xsl/PQ-Merritt-match.xml'
-PQ_XSLT = '/home/uc3/etds/xsl/PQ2MARC.xsl'
-NAMESPACE_XSLT = '/home/uc3/etds/xsl/namespace.xsl'
-TEST_XSLT = '/home/uc3/etds/xsl/PQ-test.xsl'
-SAXON = '/home/uc3/etds/lib/saxon9he.jar'
+MRT_ESCHOL_PQ = '/home/uc3/uc3-etds/xsl/mrt-eschol-pq.xml'
+PQ_MERRITT_MATCH = '/home/uc3/uc3-etds/xsl/PQ-Merritt-match.xml'
+PQ_XSLT = '/home/uc3/uc3-etds/xsl/PQ2MARC.xsl'
+NAMESPACE_XSLT = '/home/uc3/uc3-etds/xsl/namespace.xsl'
+TEST_XSLT = '/home/uc3/uc3-etds/xsl/PQ-test.xsl'
+SAXON = '/home/uc3/uc3-etds/lib/saxon9he.jar'
 TRANSFORM = 'net.sf.saxon.Transform'
 XML_PROLOG = '<?xml version="1.0" encoding="iso-8859-1" ?>\n'
 what = 'erc.what'
