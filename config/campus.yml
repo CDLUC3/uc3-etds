@@ -96,7 +96,7 @@ ucr:
 
 # UC Santa Barbara
 ucsb:
-    eschol: False
+    eschol: True 
     eschol_abbr: ucsb
     etd_delivery: True 
     delivery_method: email 
