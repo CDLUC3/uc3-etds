@@ -18,7 +18,7 @@
 -->
 <xsl:strip-space elements="*"/>
 <!-- variables to change within stylesheet -->
-<xsl:variable name="newfilename" select="concat('/home/uc3/uc3-etds/zipfiles/', substring-after($filename,'zipfiles/'))"/>
+<xsl:variable name="newfilename" select="concat('/apps/etds/apps/uc3-etds/zipfiles/', substring-after($filename,'zipfiles/'))"/>
 <xsl:variable name="surname">
 	<xsl:call-template name="replace-string">
 		<xsl:with-param name="text" select="/DISS_submission/DISS_authorship/DISS_author/DISS_name/DISS_surname"/>

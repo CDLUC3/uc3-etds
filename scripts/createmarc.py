@@ -36,7 +36,7 @@ import zipfile
 import mysql.connector
 from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive
-import pymarc
+#import pymarc
 import pysftp
 import requests
 import sqlstatements

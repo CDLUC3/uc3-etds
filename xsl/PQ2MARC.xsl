@@ -730,7 +730,7 @@
 </xsl:template>
 <xsl:template name="exception_template">
 
-<xsl:result-document method="text" href="/home/uc3/uc3-etds/marc/etd{$localID}.txt">
+<xsl:result-document method="text" href="/apps/etds/apps/uc3-etds/marc/etd{$localID}.txt">
 	<xsl:value-of select="$campus_code"/>
 	<xsl:text>&#x9;</xsl:text>
 	<xsl:value-of select="$localID"/>
