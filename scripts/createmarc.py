@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/bin/false
 # -*- coding: latin-1 -*-
 """This script runs once daily and does the following:
  1. update escholfeed table using eScholarship reports
@@ -36,7 +36,7 @@ import zipfile
 import mysql.connector
 from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive
-#import pymarc
+import pymarc
 import pysftp
 import requests
 import sqlstatements

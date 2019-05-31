@@ -1,0 +1,16 @@
+#!/bin/bash
+# @(#) Use the virtual environment to run getetds.py
+
+# If the virtual environment hasn't been set, do it now. We don't need
+# shell check's opinion of the generated virtual environment script, so
+# use source=/dev/null to ignore it.
+# shellcheck source=/dev/null
+[[ -z "${VIRTUAL_ENV}" ]] \
+    && source ~/bin/activate
+
+# Save our containing directory, must also hold our target script.
+this_dir="$(dirname "$0")"
+
+# Use the virtual environment's python to run the script, including
+# any parameters given.
+/bin/env python "${this_dir}/getetds.py" "$@"

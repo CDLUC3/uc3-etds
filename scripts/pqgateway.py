@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/bin/false
 """This script performs these steps:
 #1. retrieve author, title info from sqlite db
 #2. form CQL query

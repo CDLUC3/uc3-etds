@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/bin/false
 """This script runs once daily and does these tasks:
 1. retrieves ETDs from sftp site
 2. deletes ETDs from sftp site after retrieval

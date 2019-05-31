@@ -1,4 +1,4 @@
-#/usr/bin/python
+#!/usr/bin/python
 import yaml
 campus='/apps/etds/apps/uc3-etds/config/campus.yml'
 app='/apps/etds/apps/uc3-etds/config/app_config.yml'
