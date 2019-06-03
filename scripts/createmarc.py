@@ -937,7 +937,7 @@ def ezid_process(args):
     elif process_response == '400 error: bad request - identifier already exists':
         logging.info("ERROR: %s %s", args[0], process_response)
     else:
-        logging.exception('Failure ARK %s: %s', args[0], process_response)
+        logging.info('Failure ARK %s: %s', args[0], process_response)
 
 def main():
     """This script runs once daily and does the following:
