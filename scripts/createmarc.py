@@ -60,7 +60,7 @@ def argv_options():
 def set_logging(hostenv):
     """Set logging levels, handlers"""
 # adding line to silence warning
-#    logging.getLogger('googleapiclient.discovery_cache').setLevel(logging.ERROR)
+    logging.getLogger('googleapiclient.discovery_cache').setLevel(logging.ERROR)
     logger = logging.getLogger()
     logger.setLevel(getattr(logging, app_configs[hostenv]['log_level']))
     formatter = logging.Formatter('%(asctime)s %(message)s')
