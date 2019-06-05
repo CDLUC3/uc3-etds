@@ -901,24 +901,8 @@ def create_ezid_escholarks(hostenv, sqlqry):
     eschol_cursor.execute(sqlqry)
     for (title, creator, date, eschol_link) in eschol_cursor:
         args = []
-        try:
-            newtitle = title.decode("utf-8", "replace")
-        except UnicodeEncodeError, e1:
-            newtitle = title
-            logging.exception("UnicodeEncodeError: %s", e1)
-        except UnicodeDecodeError, e1:
-            newtitle = title
-            logging.exception("UnicodeDecodeError: %s", e1)
-        try:
-            newcreator = creator.decode("utf-8", "replace")
-        except UnicodeEncodeError, e2:
-            newcreator = creator
-            logging.exception("UnicodeEncodeError: %s", e2)
-        except UnicodeDecodeError, e2:
-            newcreator = creator
-            logging.exception("UnicodeDecodeError: %s", e2)
-#        newtitle = re.sub("’", "'", title)
-#        newcreator = re.sub("’", "'", creator)
+        newtitle = re.sub("’", "'", title)
+        newcreator = re.sub("’", "'", creator)
         ark_id = ''.join([app_configs['ezid']['eschol_shoulder'], eschol_link[32:]])
         args.extend([credentials, constants.ezid_create, ark_id, constants.who,
                      newcreator, constants.what, newtitle, constants.when, date,
