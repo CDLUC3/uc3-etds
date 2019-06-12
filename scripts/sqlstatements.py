@@ -30,7 +30,7 @@ retrieve_inv_merritt_ingest="""
 select inv_ingests.job_id as job_id, inv_objects.ark as merritt_ark, inv_objects.erc_where as local_id, inv_objects.version_number as version, inv_ingests.filename as filename, inv_objects.erc_what as obj_title, inv_objects.erc_who as obj_creator, inv_objects.erc_when as obj_date, inv_ingests.submitted as submit_date, inv_objects.modified as complete_date
 from inv_objects, inv_ingests
 where inv_objects.id=inv_ingests.inv_object_id
-and inv_ingests.profile IN ('uci_lib_etd_content', 'ucm_lib_etd_content', 'ucr_lib_etd_content', 'ucsc_lib_etd_content', 'ucsd_lib_etd_content', 'ucsf_lib_etd_content')
+and inv_ingests.profile IN ('uci_lib_etd_content', 'ucm_lib_etd_content', 'ucr_lib_etd_content', 'ucsb_lib_etd_content', 'ucsc_lib_etd_content', 'ucsd_lib_etd_content', 'ucsf_lib_etd_content')
 and DATE(inv_ingests.submitted)=CURDATE();
 """
 retrieve_inv_merritt_ingest_ucla="""
