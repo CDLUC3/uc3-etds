@@ -108,16 +108,25 @@ def remove_stop_words(input_str):
 
 def create_cql_command(author, title):
     """Creates CQL query for Proquest XML Gateway"""
+    cql_command = ''
+    return_cql_command = True
     pq_gateway_url = "http://fedsearch.proquest.com/search/sru/pqdt?"
     pq_gateway_datastr_1 = "operation=searchRetrieve&version=1.2&maximumRecords=30&startRecord=1"
     pq_gateway_datastr_2 = "&query=title%3D%22"
     pq_gateway_datastr_3 = "%22%20AND%20author%3D%22"
     pq_gateway_datastr_4 = "%22"
-    author_encoded = urllib.quote_plus(author)
-    title_encoded = urllib.quote_plus(title)
-    cql_command = pq_gateway_url + pq_gateway_datastr_1 + pq_gateway_datastr_2 \
-                  + title_encoded + pq_gateway_datastr_3 + author_encoded \
-                  + pq_gateway_datastr_4
+    try:
+        author_encoded = urllib.quote_plus(author)
+    except KeyError as err:
+        return_cql_command = False
+    try:
+        title_encoded = urllib.quote_plus(title)
+    except KeyError as err:
+        return_cql_command = False
+    if return_cql_command:
+        cql_command = pq_gateway_url + pq_gateway_datastr_1 + pq_gateway_datastr_2 \
+                      + title_encoded + pq_gateway_datastr_3 + author_encoded \
+                      + pq_gateway_datastr_4
     return cql_command
 
 def execute_cql_query(cql_query):
@@ -184,10 +193,11 @@ def main():
     for author, title in metadata_list:
         (procd_author, procd_title) = format_qry_params(author, title)
         cql_command = create_cql_command(procd_author, procd_title)
-        pq_metadata = execute_cql_query(cql_command)
-        pq_gateway_metadata = xslt_transform(pq_metadata)
-        formatted_metadata = remove_tags(pq_gateway_metadata)
-        upd_tmp_pq_gateway(hostenv, formatted_metadata)
+        if len(cql_command) > 0:
+            pq_metadata = execute_cql_query(cql_command)
+            pq_gateway_metadata = xslt_transform(pq_metadata)
+            formatted_metadata = remove_tags(pq_gateway_metadata)
+            upd_tmp_pq_gateway(hostenv, formatted_metadata)
     upd_pq_gateway(hostenv)
 
 if __name__ == '__main__':
