@@ -3,6 +3,8 @@
 <!-- DISS_submission is the root element. One XML file structured as
      shown here equals one dissertation -->
 <!-- PW added "third_party_sales" and "free_publishing_flag" attributes to DISS_submission element -->
+<!-- 2017-04-26: PW added DISS_supp_abstract because it is now appearing in PQ metadata -->
+<!-- 2019-06-19: PW added DISS_orcid to DISS_author element -->
 <!ELEMENT DISS_submission (DISS_authorship, DISS_description, DISS_content, (DISS_restriction)*, DISS_repository?, DISS_creative_commons_license?)>
 <!ATTLIST DISS_submission
   publishing_option (0 | 1) "0"
@@ -58,7 +60,7 @@
   the contact element has a "current" or "future" attribute,
   letting us know where to contact the author subsequently
 -->
-<!ELEMENT DISS_author (DISS_name, (DISS_contact)+, DISS_citizenship?)>
+<!ELEMENT DISS_author (DISS_name, (DISS_contact)+, DISS_citizenship?, DISS_orcid?) >
 <!ATTLIST DISS_author
   type (primary | additional) "primary"
 >
@@ -112,6 +114,7 @@
 -->
 <!ELEMENT DISS_citizenship (#PCDATA)>
 
+<!ELEMENT DISS_orcid (#PCDATA)>
 <!--
   this block of elements describes the dissertation for both processing
   and access purposes.
@@ -213,13 +216,17 @@
 <!ELEMENT DISS_para (#PCDATA)>
 
 <!-- this block contains the dissertation content -->
-<!ELEMENT DISS_content ((DISS_abstract)?, (DISS_binary)+, (DISS_attachment)*)>
+<!ELEMENT DISS_content ((DISS_abstract)?, (DISS_supp_abstract)?,(DISS_binary)+, (DISS_attachment)*)>
 <!--
   DISS_abstract contains one or more paragraphs of text abstract from the
   author
 -->
 <!ELEMENT DISS_abstract (DISS_para)+>
-
+<!-- 
+  2017-04-26: PW added DISS_supp_abstract because it is now appearing in 
+  PQ metadata
+-->
+<!ELEMENT DISS_supp_abstract (DISS_para)*>
 <!--
   DISS_binary contains the name of a PDF file containing the full
   dissertation.  Currently only PDF is supported.
