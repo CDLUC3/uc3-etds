@@ -1,6 +1,11 @@
 #!/bin/bash
 # @(#) Use the virtual environment to run pqgateway.py
 
+# Log file will be appended, so include some markers to delineate each run.
+script_name=$(basename "$0")
+echo "------------------------------------------------------------"
+echo "Starting $script_name at $(date)"
+
 # If the virtual environment hasn't been set, do it now. We don't need
 # shell check's opinion of the generated virtual environment script, so
 # use source=/dev/null to ignore it.
@@ -11,6 +16,12 @@
 # Save our containing directory, must also hold our target script.
 this_dir="$(dirname "$0")"
 
-# Use the virtual environment's python to run the script, including
-# any parameters given.
-/bin/env python "${this_dir}/pqgateway.py" "$@"
+# Use the virtual environment's python to run the script. The `--env prod`
+# string isn't getting passed in from crontab, so I've hard-coded that here.
+/bin/env python "${this_dir}/pqgateway.py" --env prod
+
+# Return the exit status from the python script. This is primarily
+# to verify that the script has completed (for debugging).
+python_status=$?
+echo "Finished $script_name at $(date)"
+exit $python_status
