@@ -41,7 +41,7 @@ uci:
     delivery_csv: True
     pq_campus_code: 0030
     pqmarcxslt: PQ-MARC-uci.xsl 
-    contact_email: ['perry.willett@ucop.edu'] 
+    contact_email: ['eric.lopatin@ucop.edu'] 
     sftp_user: ucietd 
     sftp_retrieve_dir: proquest
     sftp_delivery_dir: ucietd 
@@ -57,7 +57,7 @@ ucla:
     delivery_csv: False
     pq_campus_code: 0031
     pqmarcxslt: None
-    contact_email: ['perry.willett@ucop.edu'] 
+    contact_email: ['eric.lopatin@ucop.edu'] 
     sftp_user: uclaetd 
     sftp_retrieve_dir: uclaetd/etds
     sftp_delivery_dir: uclaetd/marc 
