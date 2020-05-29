@@ -106,8 +106,8 @@ ucsb:
     pq_campus_code: 0035
     pqmarcxslt: None
     contact_email: ['crissmeyer@ucsb.edu']
-    sftp_user: ucsbetd 
-    sftp_retrieve_dir: ucsbetd 
+    sftp_user: proquest
+    sftp_retrieve_dir: proquest
     sftp_delivery_dir: None
     
 # UC Santa Cruz
