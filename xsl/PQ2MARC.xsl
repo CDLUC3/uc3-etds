@@ -497,7 +497,7 @@
 		<xsl:variable name="accept_date" select="normalize-space(DISS_description/DISS_dates/DISS_accept_date)"/>
 		<!--Start by building the LDR, 007 and 008 -->
 		<!--VESTIGIAL NOTE IN ORIGINAL STYLESHEET: Processing problem is somewhere within the leader or controlfield element-->
-		<marc:leader>02211nam a2200289Ki 4500</marc:leader>
+		<marc:leader>02211nam a22002897i 4500</marc:leader>
 		<marc:controlfield tag="006">
 			<xsl:text xml:space="preserve">m     o  d        </xsl:text>
 		</marc:controlfield>
@@ -677,7 +677,7 @@
 		</marc:datafield> 
 		<marc:datafield tag="793" ind1="0" ind2=" ">
 			<marc:subfield code="a">Open access resource; selected by the UC San Diego Library.</marc:subfield>
-			<marc:subfield code="p">eScholarship online dissertations</marc:subfield>
+			<marc:subfield code="p">eScholarship online dissertations.</marc:subfield>
 		</marc:datafield>
 
 		<xsl:for-each select="DISS_authorship/DISS_author">
@@ -708,7 +708,8 @@
 						<xsl:with-param name="local_id" select="substring-after(//DISS_description/@external_id, 'http://dissertations.umi.com/')"/>
 						</xsl:call-template>
 					</marc:subfield>
-				</marc:datafield>		
+					<marc:subfield code="7">0</marc:subfield>
+				</marc:datafield>
 			</xsl:when>
 			<xsl:otherwise>
 				<marc:datafield tag="856" ind1="4" ind2="0">
