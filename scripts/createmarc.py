@@ -624,7 +624,7 @@ def deliver_via_sftp(files2deliver, campusabbr, hostenv):
 
 def deliver_via_email(files2deliver, campusabbr, hostenv):
     """Delivers appropriate files to campus via email"""
-    sig = ". Let me know if you have any questions.\n\nPerry Willett\n" \
+    sig = ". Let me know if you have any questions.\n\nEric Lopatin\n" \
           "California Digital Library"
     contains_marc_records = False
     etdcount = 0
