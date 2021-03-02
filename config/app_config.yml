@@ -1,0 +1,61 @@
+# This file is maintained by Puppet. Any changes here will be overwritten
+# within 30 minutes, so make any needed changes in the Puppet repository.
+
+# Stage configs
+stage:
+    sftphost: sftp-stg.cdlib.org
+    private_key: /apps/etds/.ssh/id_rsa
+    mysqlhost: rds-uc3-mrt-inv-stg.cmcguhglinoa.us-west-2.rds.amazonaws.com
+    mysqluser: invro
+    mysqlpw: invro-6Zstg
+    mysqldbname: inv
+    mysql_cert: /apps/etds/apps/uc3-etds/certs/rds-combined-ca-bundle.pem
+    mrthost: https://merritt-stage.cdlib.org/
+    mrtuser: etd_submitter
+    mrtpw: ojK4313d
+    mrt_coll: merritt_demo_content
+    etddb: /apps/etds/apps/uc3-etds/db/etd.db
+    log_level: INFO
+    log_file: /apps/etds/apps/uc3-etds/logs/etds.log
+    error_notify: 'eric.lopatin@ucop.edu'
+    marc_dir: /apps/etds/apps/uc3-etds/marc/
+    rpt_dir: /apps/etds/apps/uc3-etds/reports/
+    tmp_dir: /apps/etds/apps/uc3-etds/tmp/
+    xsl_dir: /apps/etds/apps/uc3-etds/xsl/
+    zip_dir: /apps/etds/apps/uc3-etds/zipfiles/
+    etd_xsl_file: /apps/etds/apps/uc3-etds/xsl/etd.xsl
+    ns_xsl_file: /apps/etds/apps/uc3-etds/xsl/namespace.xsl
+    backup_gdrive_folder_id: '1yNMnVZ6o3aYqs2YgwVXr5av7-zJ51Ofl'
+
+# Production configs
+prod:
+    sftphost: sftp.cdlib.org
+    private_key: /apps/etds/.ssh/id_rsa
+    mysqlhost: rds-uc3-mrt-inv-prd.cmcguhglinoa.us-west-2.rds.amazonaws.com
+    mysqluser: invro
+    mysqlpw: invro-T7prd
+    mysqldbname: inv
+    mysql_cert: /apps/etds/apps/uc3-etds/certs/rds-combined-ca-bundle.pem
+    mrthost: https://merritt.cdlib.org/
+    mrtuser: etd_submitter
+    mrtpw: ojK4313d
+    mrt_coll: cdl_uc3_etdreports_content
+    etddb: /apps/etds/apps/uc3-etds/db/etd.db
+    log_level: INFO
+    log_file: /apps/etds/apps/uc3-etds/logs/etds.log
+    error_notify: 'eric.lopatin@ucop.edu'
+    marc_dir: /apps/etds/apps/uc3-etds/marc/
+    rpt_dir: /apps/etds/apps/uc3-etds/reports/
+
+sftpMARCdirs:
+    uci: ucietd
+    ucla: uclaetd/marc
+
+sftpETDdirs:
+    proquest: proquest
+    ucla: uclaetd/etds
+    ucsb: proquest
+
+ezid:
+    eschol_shoulder: 'ark:/13030/qt'
+    credentials: 'merritt:MPr3s3rvt1on'

@@ -3,78 +3,79 @@ ucb:
     eschol: True
     eschol_abbr: ucb
     etd_delivery: False
-    delivery_method: None 
+    delivery_method: None
     create_marc: False
     delivery_marc: False
     delivery_csv: False
     pq_campus_code: 0028
     pqmarcxslt: None
-    contact_email: None 
+    contact_email: None
     sftp_user: None
     sftp_retrieve_dir: None
     sftp_delivery_dir: None
-    
+
 # UC Davis
 ucd:
     eschol: False
     eschol_abbr: ucd
     etd_delivery: False
-    delivery_method: None 
+    delivery_method: None
     create_marc: False
     delivery_marc: False
     delivery_csv: False
     pq_campus_code: 0029
     pqmarcxslt: None
     contact_email: None
-    sftp_user: None   
+    sftp_user: None
     sftp_retrieve_dir: None
     sftp_delivery_dir: None
- 
+
 # UC Irvine
-uci: 
+uci:
     eschol: True
     eschol_abbr: uci
     etd_delivery: True
-    delivery_method: sftp 
-    create_marc: True 
+    delivery_method: email
+    # delivery_method: sftp
+    create_marc: True
     delivery_marc: True
     delivery_csv: True
     pq_campus_code: 0030
-    pqmarcxslt: PQ-MARC-uci.xsl 
-    contact_email: ['eric.lopatin@ucop.edu'] 
-    sftp_user: ucietd 
+    pqmarcxslt: PQ-MARC-uci.xsl
+    contact_email: ['eric.lopatin@ucop.edu']
+    sftp_user: ucietd
     sftp_retrieve_dir: proquest
-    sftp_delivery_dir: ucietd 
-    
+    sftp_delivery_dir: ucietd
+
 #UC Los Angeles
 ucla:
     eschol: True
     eschol_abbr: ucla
     etd_delivery: True
-    delivery_method: sftp 
-    create_marc: True 
+    delivery_method: sftp
+    create_marc: True
     delivery_marc: True
     delivery_csv: False
     pq_campus_code: 0031
     pqmarcxslt: None
-    contact_email: ['eric.lopatin@ucop.edu'] 
-    sftp_user: uclaetd 
+    contact_email: ['eric.lopatin@ucop.edu']
+    sftp_user: uclaetd
     sftp_retrieve_dir: uclaetd/etds
-    sftp_delivery_dir: uclaetd/marc 
-    
+    sftp_delivery_dir: uclaetd/marc
+
 # UC Merced
 ucmerced:
     eschol: True
     eschol_abbr: ucm
     etd_delivery: True
-    delivery_method: email 
+    delivery_method: email
     create_marc: False
     delivery_marc: True
     delivery_csv: True
     pq_campus_code: 1660
-    pqmarcxslt: PQ-MARC-ucm.xsl 
-    contact_email: ['ssheets@ucmerced.edu'] 
-    sftp_user: proquest 
+    pqmarcxslt: PQ-MARC-ucm.xsl
+    contact_email: ['eric.lopatin@ucop.edu']
+    sftp_user: proquest
     sftp_retrieve_dir: proquest
     sftp_delivery_dir: None
 
@@ -83,78 +84,79 @@ ucr:
     eschol: True
     eschol_abbr: ucr
     etd_delivery: True
-    delivery_method: email 
+    delivery_method: email
     create_marc: False
     delivery_marc: False
     delivery_csv: True
     pq_campus_code: 0032
     pqmarcxslt: None
-    contact_email: ['brianna.marshall@ucr.edu'] 
-    sftp_user: proquest 
+    contact_email: [ 'eric.lopatin@ucop.edu' ]
+    sftp_user: proquest
     sftp_retrieve_dir: proquest
     sftp_delivery_dir: None
 
 # UC Santa Barbara
 ucsb:
-    eschol: True 
+    eschol: True
     eschol_abbr: ucsb
-    etd_delivery: True 
-    delivery_method: email 
+    etd_delivery: True
+    delivery_method: email
     create_marc: False
     delivery_marc: False
     delivery_csv: False
     pq_campus_code: 0035
     pqmarcxslt: None
-    contact_email: ['crissmeyer@ucsb.edu']
+    contact_email: [ 'eric.lopatin@ucop.edu' ]
     sftp_user: proquest
     sftp_retrieve_dir: proquest
     sftp_delivery_dir: None
-    
+
 # UC Santa Cruz
 ucsc:
     eschol: True
     eschol_abbr: ucsc
     etd_delivery: True
-    delivery_method: email 
+    delivery_method: email
     create_marc: False
     delivery_marc: True
     delivery_csv: True
     pq_campus_code: 0036
-    pqmarcxslt: PQ-MARC-ucsc.xsl 
-    contact_email: ['techserv@library.ucsc.edu', 'chesley@ucsc.edu', 'jspencer@ucsc.edu'] 
-    sftp_user: proquest 
+    pqmarcxslt: PQ-MARC-ucsc.xsl
+    contact_email: [ 'eric.lopatin@ucop.edu' ]
+    sftp_user: proquest
     sftp_retrieve_dir: proquest
     sftp_delivery_dir: None
-    
+
 #UC San Diego
 ucsd:
     eschol: True
     eschol_abbr: ucsd
     etd_delivery: True
-    delivery_method: email 
-    create_marc: True 
+    delivery_method: email
+    create_marc: True
     delivery_marc: True
     delivery_csv: True
     pq_campus_code: 0033
     pqmarcxslt: None
-    contact_email: ['ETD_Library_Contacts@ad.ucsd.edu'] 
-    sftp_user: proquest 
+    #contact_email: ['ETD_Library_Contacts@ad.ucsd.edu']
+    contact_email: [ 'eric.lopatin@ucop.edu' ]
+    sftp_user: proquest
     sftp_retrieve_dir: proquest
     sftp_delivery_dir: None
-    
+
 # UC San Francisco
 ucsf:
-    eschol: True 
+    eschol: True
     eschol_abbr: ucsf
     etd_delivery: True
-    delivery_method: email 
+    delivery_method: email
     create_marc: False
     delivery_marc: False
     delivery_csv: True
     pq_campus_code: 0034
     pqmarcxslt: None
-    contact_email: ['Cathleen.Lu@ucsf.edu'] 
-    sftp_user: proquest 
+    contact_email: [ 'eric.lopatin@ucop.edu' ]
+    sftp_user: proquest
     sftp_retrieve_dir: proquest
     sftp_delivery_dir: None
 
