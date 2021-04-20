@@ -1,4 +1,9 @@
-Various scripts to manage ETDs.
+# ETDs Service Scripts
+
+## Component Diagram
+![Flowchart](https://github.com/CDLUC3/mrt-doc/raw/master/diagrams/etd.mmd.svg)
+
+
 ---
 getetds.py: This script runs Mon-Sat at 07:30.
 
