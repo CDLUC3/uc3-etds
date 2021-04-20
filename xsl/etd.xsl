@@ -56,9 +56,20 @@
 </xsl:variable>
 <!--PQ identifier has form: uc[campus]:[numeric id]. We're changing that to 
 have form: PQETD:uc[campus][numeric] -->
+<xsl:variable name="vlocalid" select="/DISS_submission/DISS_description/@external_id"/>
 <xsl:variable name="localID">
-		<xsl:text>PQETD:</xsl:text>
-		<xsl:value-of select="translate(substring-after(/DISS_submission/DISS_description/@external_id,'http://dissertations.umi.com/'),':','')"/>	
+	<xsl:text>PQETD:</xsl:text>
+	<xsl:choose>
+		<xsl:when test="contains($vlocalid,'http://dissertations.umi.com/')">
+			<xsl:value-of select="translate(substring-after($vlocalid,'http://dissertations.umi.com/'),':','')"/>
+	    </xsl:when>
+		<xsl:when test="contains($vlocalid,'http://oclc.id/')">
+  			<xsl:value-of select="translate(substring-after($vlocalid,'http://'),':','')"/>
+	    </xsl:when>
+		<xsl:otherwise>
+			<xsl:value-of select="$vlocalid"/>
+		</xsl:otherwise>
+	</xsl:choose>
 </xsl:variable>
 <xsl:variable name="inst_code" select="/DISS_submission/DISS_description/DISS_institution/DISS_inst_code"/>
 <!-- begin output -->
@@ -147,4 +158,3 @@ have form: PQETD:uc[campus][numeric] -->
 	</xsl:choose>
 </xsl:template>
 </xsl:stylesheet>
-

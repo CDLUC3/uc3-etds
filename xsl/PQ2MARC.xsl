@@ -7,7 +7,10 @@
 <xsl:key name="local_id" match="row" use="value"/>
 <xsl:key name="subject" match="row" use="value"/> 
 <xsl:variable name="campus_code" select="/DISS_submission/DISS_description/DISS_institution/DISS_inst_code"/>
-<xsl:variable name="fullLocalID" select="substring-after(//DISS_description/@external_id, 'http://dissertations.umi.com/')"/>
+<xsl:variable name="vlocalid" select="//DISS_description/@external_id"/>
+<xsl:variable name="fullLocalID">
+	<xsl:call-template name="get_local_id"/>
+</xsl:variable>
 <xsl:variable name="localID" select="substring-after($fullLocalID,':')"/>
 <xsl:variable name="lookupID" select="document('mrt-eschol-pq.xml')"/>	
 <xsl:variable name="lookupSubj" select="document('uci-subjects.xml')"/>	
@@ -18,6 +21,21 @@
 <xsl:variable name="subjectArea" select="substring-before(/DISS_submission/DISS_description/DISS_institution/DISS_inst_contact, ' -')"/>
 <xsl:variable name="etdTitle" select="/DISS_submission/DISS_description/DISS_title"/>
 <xsl:param name="embargo_code4"/>
+
+<xsl:template name="get_local_id">
+	<xsl:choose>
+		<xsl:when test="contains(//DISS_description/@external_id,'http://dissertations.umi.com/')">
+			<xsl:value-of select="substring-after(//DISS_description/@external_id,'http://dissertations.umi.com/')"/>
+	        </xsl:when>
+		<xsl:when test="contains(//DISS_description/@external_id,'http://oclc.id/')">
+  			<xsl:value-of select="substring-after(//DISS_description/@external_id,'http://')"/>
+	        </xsl:when>
+		<xsl:otherwise>
+			<xsl:value-of select="//DISS_description/@external_id"/>
+		</xsl:otherwise>
+	</xsl:choose>
+</xsl:template>
+
 
 <!-- UMI School Codes (DISS_inst_code) for UC campuses:
 	ucb:	0028
@@ -229,8 +247,11 @@
 			<xsl:when test="@embargo_code=0">
 				<marc:datafield tag="856" ind1="4" ind2="8">
 					<marc:subfield code="z">Open Access via eScholarship</marc:subfield>
-					<marc:subfield code="u"><xsl:call-template name="lookupEScholLink">
-						<xsl:with-param name="local_id" select="substring-after(//DISS_description/@external_id, 'http://dissertations.umi.com/')"/>
+					<marc:subfield code="u">
+						<xsl:call-template name="lookupEScholLink">
+							<xsl:with-param name="local_id">
+								<xsl:call-template name="get_local_id"/>
+							</xsl:with-param>
 						</xsl:call-template>
 					</marc:subfield>
 				</marc:datafield>		
@@ -245,7 +266,9 @@
 					</marc:subfield>
 					<marc:subfield code="u">
 						<xsl:call-template name="lookupEScholLink">
-							<xsl:with-param name="local_id" select="substring-after(//DISS_description/@external_id, 'http://dissertations.umi.com/')"/>
+							<xsl:with-param name="local_id">
+								<xsl:call-template name="get_local_id"/>
+							</xsl:with-param>
 						</xsl:call-template>
 					</marc:subfield>
 				</marc:datafield>
@@ -466,8 +489,11 @@
 			<xsl:when test="@embargo_code=0">
 				<marc:datafield tag="856" ind1="4" ind2="0">
 					<marc:subfield code="z">Open Access via eScholarship</marc:subfield>
-					<marc:subfield code="u"><xsl:call-template name="lookupEScholLink">
-						<xsl:with-param name="local_id" select="substring-after(//DISS_description/@external_id, 'http://dissertations.umi.com/')"/>
+					<marc:subfield code="u">
+						<xsl:call-template name="lookupEScholLink">
+							<xsl:with-param name="local_id">
+								<xsl:call-template name="get_local_id"/>
+							</xsl:with-param>
 						</xsl:call-template>
 					</marc:subfield>
 				</marc:datafield>		
@@ -482,7 +508,9 @@
 					</marc:subfield>
 					<marc:subfield code="u">
 						<xsl:call-template name="lookupEScholLink">
-							<xsl:with-param name="local_id" select="substring-after(//DISS_description/@external_id, 'http://dissertations.umi.com/')"/>
+							<xsl:with-param name="local_id">
+								<xsl:call-template name="get_local_id"/>
+							</xsl:with-param>
 						</xsl:call-template>
 					</marc:subfield>
 				</marc:datafield>
@@ -704,8 +732,11 @@
 			<xsl:when test="@embargo_code=0">
 				<marc:datafield tag="856" ind1="4" ind2="0">
 					<marc:subfield code="z">Open Access via eScholarship</marc:subfield>
-					<marc:subfield code="u"><xsl:call-template name="lookupEScholLink">
-						<xsl:with-param name="local_id" select="substring-after(//DISS_description/@external_id, 'http://dissertations.umi.com/')"/>
+					<marc:subfield code="u">
+						<xsl:call-template name="lookupEScholLink">
+							<xsl:with-param name="local_id">
+								<xsl:call-template name="get_local_id"/>
+							</xsl:with-param>
 						</xsl:call-template>
 					</marc:subfield>
 					<marc:subfield code="7">0</marc:subfield>
@@ -721,7 +752,9 @@
 					</marc:subfield>
 					<marc:subfield code="u">
 						<xsl:call-template name="lookupEScholLink">
-							<xsl:with-param name="local_id" select="substring-after(//DISS_description/@external_id, 'http://dissertations.umi.com/')"/>
+							<xsl:with-param name="local_id">
+								<xsl:call-template name="get_local_id"/>
+							</xsl:with-param>
 						</xsl:call-template>
 					</marc:subfield>
 				</marc:datafield>
