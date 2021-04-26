@@ -230,7 +230,8 @@ def submit_to_merritt(submission_params, hostenv):
     (merritt_host, username, password) = get_merritt_login(hostenv)
     merritt_url = merritt_host + 'object/update/'
     ## problem with cert on merritt-stage requires verify be set to False
-    if hostenv == 'stage':
+    ## setting to 'stg' temporarily on 2020-10-23
+    if hostenv == 'stg':
         verify_flag = False
     else:
         verify_flag = True

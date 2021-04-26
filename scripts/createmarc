@@ -18,7 +18,7 @@ this_dir="$(dirname "$0")"
 
 # Use the virtual environment's python to run the script. The `--env prod`
 # string isn't getting passed in from crontab, so I've hard-coded that here.
-/bin/env python "${this_dir}/createmarc.py" --env prod
+/bin/env python "${this_dir}/createmarc.py" --env stage
 
 # Return the exit status from the python script. This is primarily
 # to verify that the script has completed (for debugging).
