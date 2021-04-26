@@ -35,8 +35,9 @@ uci:
     eschol: True
     eschol_abbr: uci
     etd_delivery: True
+    # delivery_method: email
     delivery_method: sftp 
-    create_marc: True 
+    create_marc: False 
     delivery_marc: True
     delivery_csv: True
     pq_campus_code: 0030
@@ -73,7 +74,7 @@ ucmerced:
     delivery_csv: True
     pq_campus_code: 1660
     pqmarcxslt: PQ-MARC-ucm.xsl 
-    contact_email: ['ssheets@ucmerced.edu'] 
+    contact_email: ['eric.lopatin@ucop.edu'] 
     sftp_user: proquest 
     sftp_retrieve_dir: proquest
     sftp_delivery_dir: None
@@ -89,7 +90,7 @@ ucr:
     delivery_csv: True
     pq_campus_code: 0032
     pqmarcxslt: None
-    contact_email: ['brianna.marshall@ucr.edu'] 
+    contact_email: ['eric.lopatin@ucop.edu'] 
     sftp_user: proquest 
     sftp_retrieve_dir: proquest
     sftp_delivery_dir: None
@@ -105,7 +106,7 @@ ucsb:
     delivery_csv: False
     pq_campus_code: 0035
     pqmarcxslt: None
-    contact_email: ['crissmeyer@ucsb.edu']
+    contact_email: ['eric.lopatin@ucop.edu']
     sftp_user: proquest
     sftp_retrieve_dir: proquest
     sftp_delivery_dir: None
@@ -121,7 +122,7 @@ ucsc:
     delivery_csv: True
     pq_campus_code: 0036
     pqmarcxslt: PQ-MARC-ucsc.xsl 
-    contact_email: ['techserv@library.ucsc.edu', 'chesley@ucsc.edu', 'jspencer@ucsc.edu'] 
+    contact_email: ['eric.lopatin@ucop.edu'] 
     sftp_user: proquest 
     sftp_retrieve_dir: proquest
     sftp_delivery_dir: None
@@ -137,7 +138,8 @@ ucsd:
     delivery_csv: True
     pq_campus_code: 0033
     pqmarcxslt: None
-    contact_email: ['ETD_Library_Contacts@ad.ucsd.edu'] 
+    #contact_email: ['ETD_Library_Contacts@ad.ucsd.edu'] 
+    contact_email: ['eric.lopatin@ucop.edu']
     sftp_user: proquest 
     sftp_retrieve_dir: proquest
     sftp_delivery_dir: None
@@ -153,7 +155,7 @@ ucsf:
     delivery_csv: True
     pq_campus_code: 0034
     pqmarcxslt: None
-    contact_email: ['Cathleen.Lu@ucsf.edu'] 
+    contact_email: ['eric.lopatin@ucop.edu'] 
     sftp_user: proquest 
     sftp_retrieve_dir: proquest
     sftp_delivery_dir: None

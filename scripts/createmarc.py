@@ -22,6 +22,8 @@ import datetime
 import email
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+# Added io import:
+import io
 import logging
 import logging.handlers
 import optparse
@@ -155,6 +157,7 @@ def get_eschol(campusabbr):
     except requests.exceptions.RequestException as err1:
         logging.exception("ERROR retrieving eScholarship report: %s", err1)
     if req.status_code == 200:
+        print(req.url)
         logging.info("eScholfeed campus %s", campusabbr)
     else:
         logging.exception("ERROR retrieving eScholfeed for %s: %s", campusabbr, req.status_code)
@@ -465,14 +468,21 @@ def convert_marc_to_xml(hostenv):
             # convert to XML
             marcpathname = os.path.join(app_configs[hostenv]['marc_dir'], marcfilename)
             try:
-                reader = pymarc.MARCReader(open(marcpathname, 'rb'), to_unicode=True)
+                reader = pymarc.MARCReader(open(marcpathname, 'rb'), permissive=True, to_unicode=True)
 #pylint: disable=maybe-no-member
             except pymarc.exceptions.PymarcException as err:
                 logging.exception("ERROR opening PQ MARC file %s: %s", marcpathname, err.message)
             writer = codecs.open(marc_tmpfile, 'w', 'utf-8')
+            # writer = io.open(marc_tmpfile, 'w', encoding='utf-8')
             writer.write(constants.XML_PROLOG)
+            # xml_prolog = constants.XML_PROLOG
+            # xml_prolog.encode('utf-8')
+            # writer.write(xml_prolog)
+            # print(xml_prolog)
             writer.write(xmlmarcnamespace)
             for record in reader:
+                if record is None:
+                    continue
                 record.leader = record.leader[:9] + 'a' + record.leader[10:]
                 writer.write(pymarc.record_to_xml(record, namespace=False) + "\n")
             writer.write(xmlcloser)
