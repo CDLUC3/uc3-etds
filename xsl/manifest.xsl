@@ -31,10 +31,7 @@
 	<xsl:choose>
 		<xsl:when test="contains($vlocalid,'http://dissertations.umi.com/')">
 			<xsl:value-of select="substring-after($vlocalid,'http://dissertations.umi.com/')"/>
-	        </xsl:when>
-		<xsl:when test="contains($vlocalid,'http://oclc.id/')">
-  			<xsl:value-of select="substring-after($vlocalid,'http://')"/>
-	        </xsl:when>
+	    </xsl:when>
 		<xsl:otherwise>
 			<xsl:value-of select="$vlocalid"/>
 		</xsl:otherwise>

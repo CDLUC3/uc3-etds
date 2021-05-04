@@ -63,9 +63,6 @@ have form: PQETD:uc[campus][numeric] -->
 		<xsl:when test="contains($vlocalid,'http://dissertations.umi.com/')">
 			<xsl:value-of select="translate(substring-after($vlocalid,'http://dissertations.umi.com/'),':','')"/>
 	    </xsl:when>
-		<xsl:when test="contains($vlocalid,'http://oclc.id/')">
-  			<xsl:value-of select="translate(substring-after($vlocalid,'http://'),':','')"/>
-	    </xsl:when>
 		<xsl:otherwise>
 			<xsl:value-of select="$vlocalid"/>
 		</xsl:otherwise>
