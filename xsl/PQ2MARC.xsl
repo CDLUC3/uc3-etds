@@ -26,10 +26,7 @@
 	<xsl:choose>
 		<xsl:when test="contains(//DISS_description/@external_id,'http://dissertations.umi.com/')">
 			<xsl:value-of select="substring-after(//DISS_description/@external_id,'http://dissertations.umi.com/')"/>
-	        </xsl:when>
-		<xsl:when test="contains(//DISS_description/@external_id,'http://oclc.id/')">
-  			<xsl:value-of select="substring-after(//DISS_description/@external_id,'http://')"/>
-	        </xsl:when>
+	    </xsl:when>
 		<xsl:otherwise>
 			<xsl:value-of select="//DISS_description/@external_id"/>
 		</xsl:otherwise>
