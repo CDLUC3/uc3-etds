@@ -26,7 +26,17 @@
 <xsl:variable name="agreement_date" select="/DISS_submission/DISS_repository/DISS_agreement_decision_date"/>
 <xsl:variable name="local_IR_embargo_period" select="/DISS_submission/DISS_repository/DISS_delayed_release"/>
 <xsl:variable name="local_IR_access_option" select="/DISS_submission/DISS_repository/DISS_access_option"/>
-<xsl:variable name="localID" select="substring-after(/DISS_submission/DISS_description/@external_id,'http://dissertations.umi.com/')"/>
+<xsl:variable name="vlocalid" select="/DISS_submission/DISS_description/@external_id"/>
+<xsl:variable name="localID">
+	<xsl:choose>
+		<xsl:when test="contains($vlocalid,'http://dissertations.umi.com/')">
+			<xsl:value-of select="substring-after($vlocalid,'http://dissertations.umi.com/')"/>
+	    </xsl:when>
+		<xsl:otherwise>
+			<xsl:value-of select="$vlocalid"/>
+		</xsl:otherwise>
+	</xsl:choose>
+</xsl:variable>
 <xsl:variable name="acceptDate" select="/DISS_submission/DISS_description/DISS_dates/DISS_accept_date"/>
 <xsl:variable name="sales_restrict_remove" select="/DISS_submission/DISS_restriction/DISS_sales_restriction/@remove"/>
 <xsl:variable name="cc_license" select="/DISS_submission/DISS_creative_commons_license/DISS_abbreviation"/>
