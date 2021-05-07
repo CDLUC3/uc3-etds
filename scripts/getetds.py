@@ -186,6 +186,7 @@ def extract_metadata(hostenv):
                 for zxml in pq_zfile.namelist():
                     if zxml[-9:] == "_DATA.xml":
                         zfullpath = zipdir+zfile
+                        logging.info("Extracting metadata for %s", zxml)
                         pqopen = pq_zfile.open(zxml)
                         pqstring = pqopen.read()
                         dom = ET.fromstring(pqstring)
