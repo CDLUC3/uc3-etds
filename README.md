@@ -1,7 +1,7 @@
 # ETDs Service Scripts
 
 ## Component Diagram
-![Flowchart](https://github.com/CDLUC3/mrt-doc/raw/master/diagrams/etd.mmd.svg)
+![Flowchart](https://github.com/CDLUC3/mrt-doc/raw/main/diagrams/etd.mmd.svg)
 
 
 ---
