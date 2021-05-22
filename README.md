@@ -41,3 +41,8 @@ This script will query Proquest via their XML Gateway whether ETDs are available
 the pq_gateway table is used to include a persistent link to the Proquest copy of the ETD in MARC
 records.  
 
+## To run sqlite3
+
+```
+sqlite3 db/etd.db
+```
