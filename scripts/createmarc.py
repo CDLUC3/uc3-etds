@@ -465,7 +465,7 @@ def convert_marc_to_xml(hostenv):
             # convert to XML
             marcpathname = os.path.join(app_configs[hostenv]['marc_dir'], marcfilename)
             try:
-                reader = pymarc.MARCReader(open(marcpathname, 'rb'), to_unicode=True)
+                reader = pymarc.MARCReader(open(marcpathname, 'rb'), permissive=True, to_unicode=True)
 #pylint: disable=maybe-no-member
             except pymarc.exceptions.PymarcException as err:
                 logging.exception("ERROR opening PQ MARC file %s: %s", marcpathname, err.message)
@@ -473,6 +473,10 @@ def convert_marc_to_xml(hostenv):
             writer.write(constants.XML_PROLOG)
             writer.write(xmlmarcnamespace)
             for record in reader:
+                if record is None:
+                    logging.error("** Skipping record")
+                    print("** Skipping record")
+                    continue
                 record.leader = record.leader[:9] + 'a' + record.leader[10:]
                 writer.write(pymarc.record_to_xml(record, namespace=False) + "\n")
             writer.write(xmlcloser)
