@@ -68,12 +68,13 @@ def format_qry_params(author, title):
     """formats author title params for CQL query"""
     unaccented_author = remove_accents(author)
     trunc_author = re.match(r'^([^,]+),\s+(\w+)', unaccented_author)
+    trunc_author2 = trunc_author.group(0) if trunc_author is not None else ''
     newtitle = replace_chars(title)
     unaccented_title = remove_accents(newtitle)
     filtered_title = remove_stop_words(unaccented_title)
     trunc_list = filtered_title.split()[:4]
     trunc_title = ' '.join(trunc_list)
-    return trunc_author.group(0), trunc_title
+    return trunc_author2, trunc_title
 
 def remove_accents(input_str):
     """Normalizes accented characters by changing to unaccented chars"""
