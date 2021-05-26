@@ -73,7 +73,7 @@ ucmerced:
     delivery_csv: True
     pq_campus_code: 1660
     pqmarcxslt: PQ-MARC-ucm.xsl 
-    contact_email: ['ssheets@ucmerced.edu'] 
+    contact_email: ['ssheets@ucmerced.edu','eric.lopatin@ucop.edu'] 
     sftp_user: proquest 
     sftp_retrieve_dir: proquest
     sftp_delivery_dir: None
@@ -89,7 +89,7 @@ ucr:
     delivery_csv: True
     pq_campus_code: 0032
     pqmarcxslt: None
-    contact_email: ['brianna.marshall@ucr.edu'] 
+    contact_email: ['brianna.marshall@ucr.edu', 'eric.lopatin@ucop.edu'] 
     sftp_user: proquest 
     sftp_retrieve_dir: proquest
     sftp_delivery_dir: None
@@ -121,7 +121,7 @@ ucsc:
     delivery_csv: True
     pq_campus_code: 0036
     pqmarcxslt: PQ-MARC-ucsc.xsl 
-    contact_email: ['techserv@library.ucsc.edu', 'chesley@ucsc.edu', 'jspencer@ucsc.edu'] 
+    contact_email: ['metadata@ucsc.edu', 'chesley@ucsc.edu', 'jspencer@ucsc.edu', 'eric.lopatin@ucop.edu'] 
     sftp_user: proquest 
     sftp_retrieve_dir: proquest
     sftp_delivery_dir: None
@@ -137,7 +137,7 @@ ucsd:
     delivery_csv: True
     pq_campus_code: 0033
     pqmarcxslt: None
-    contact_email: ['ETD_Library_Contacts@ad.ucsd.edu'] 
+    contact_email: ['ETD_Library_Contacts@ad.ucsd.edu', 'eric.lopatin@ucop.edu'] 
     sftp_user: proquest 
     sftp_retrieve_dir: proquest
     sftp_delivery_dir: None
@@ -153,7 +153,7 @@ ucsf:
     delivery_csv: True
     pq_campus_code: 0034
     pqmarcxslt: None
-    contact_email: ['Cathleen.Lu@ucsf.edu'] 
+    contact_email: ['Cathleen.Lu@ucsf.edu', 'eric.lopatin@ucop.edu'] 
     sftp_user: proquest 
     sftp_retrieve_dir: proquest
     sftp_delivery_dir: None
