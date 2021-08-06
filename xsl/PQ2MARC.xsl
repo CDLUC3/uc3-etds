@@ -697,10 +697,10 @@
 			</marc:datafield>  
 		</xsl:for-each>
 
-		<marc:datafield tag="793" ind1="0" ind2=" ">
+		<marc:datafield tag="973" ind1="0" ind2=" ">
 			<marc:subfield code="a">UCSD online theses and dissertations.</marc:subfield>
 		</marc:datafield> 
-		<marc:datafield tag="793" ind1="0" ind2=" ">
+		<marc:datafield tag="973" ind1="0" ind2=" ">
 			<marc:subfield code="a">Open access resource; selected by the UC San Diego Library.</marc:subfield>
 			<marc:subfield code="p">eScholarship online dissertations.</marc:subfield>
 		</marc:datafield>
