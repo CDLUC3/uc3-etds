@@ -195,6 +195,7 @@ def main():
         (procd_author, procd_title) = format_qry_params(author, title)
         cql_command = create_cql_command(procd_author, procd_title)
         if len(cql_command) > 0:
+            print(cql_command)
             pq_metadata = execute_cql_query(cql_command)
             pq_gateway_metadata = xslt_transform(pq_metadata)
             formatted_metadata = remove_tags(pq_gateway_metadata)
