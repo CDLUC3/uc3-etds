@@ -6,7 +6,7 @@
 <!--This stylesheet transforms Proquest ETD metadata into a Merritt ingest API statement -->
 <!-- UMI School Codes (DISS_inst_code) for UC campuses:
 	ucb:	0028
-	ucd:	0029 (note: UCD does not deposit ETDs in Merritt)
+	ucd:	0029
 	uci:	0030
 	ucla:	0031
 	ucr:	0032
@@ -100,7 +100,7 @@ have form: PQETD:uc[campus][numeric] -->
 			<xsl:text>'profile':'ucb_lib_etd_content' </xsl:text>
 		</xsl:when>
 		<xsl:when test="$inst_code = '0029'">
-			<xsl:text>'profile':'NULL' </xsl:text>
+			<xsl:text>'profile':'ucd_lib_etd_content' </xsl:text>
 		</xsl:when>
 		<xsl:when test="$inst_code = '0030'">
 			<xsl:text>'profile':'uci_lib_etd_content' </xsl:text>
