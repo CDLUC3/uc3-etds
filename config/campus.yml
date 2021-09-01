@@ -16,18 +16,18 @@ ucb:
     
 # UC Davis
 ucd:
-    eschol: False
+    eschol: True
     eschol_abbr: ucd
-    etd_delivery: False
-    delivery_method: None 
-    create_marc: False
+    etd_delivery: True
+    delivery_method: email 
+    create_marc: True
     delivery_marc: False
-    delivery_csv: False
+    delivery_csv: True
     pq_campus_code: 0029
     pqmarcxslt: None
-    contact_email: None
-    sftp_user: None   
-    sftp_retrieve_dir: None
+    contact_email: ['eric.lopatin@ucop.edu']
+    sftp_user: proquest   
+    sftp_retrieve_dir: proquest
     sftp_delivery_dir: None
  
 # UC Irvine
