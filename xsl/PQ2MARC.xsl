@@ -736,7 +736,6 @@
 							</xsl:with-param>
 						</xsl:call-template>
 					</marc:subfield>
-					<marc:subfield code="7">0</marc:subfield>
 				</marc:datafield>
 			</xsl:when>
 			<xsl:otherwise>
