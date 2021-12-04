@@ -15,7 +15,7 @@ ucb:
     sftp_delivery_dir: None
     
 # UC Davis
-ucd:
+ucdavis:
     eschol: True
     eschol_abbr: ucd
     etd_delivery: True
@@ -164,7 +164,7 @@ proquest:
 
 PQCampusCodes:
     '0028': ucb
-    '0029': ucd
+    '0029': ucdavis
     '0030': uci
     '0031': ucla
     '0032': ucr

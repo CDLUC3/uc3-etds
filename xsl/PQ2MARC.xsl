@@ -36,7 +36,7 @@
 
 <!-- UMI School Codes (DISS_inst_code) for UC campuses:
 	ucb:	0028
-	ucd:	0029
+	ucdavis:	0029
 	uci:	0030
 	ucla:	0031
 	ucr:	0032
