@@ -244,7 +244,7 @@ def upd_eschol_xml(hostenv):
 def create_marc_xml(hostenv):
     """Creates MARC XML files using metadata files in PQ zip containers
        in zipdir"""
-    campuscount = {'ucb':0, 'ucd':0, 'uci':0, 'ucla':0, 'ucr':0,
+    campuscount = {'ucb':0, 'ucdavis':0, 'uci':0, 'ucla':0, 'ucr':0,
                    'ucsd':0, 'ucsf':0, 'ucsb':0, 'ucsc':0, 'ucmerced':0}
     etdquery = sqlstatements.get_merritt_ark
     escholquery = sqlstatements.get_eschol_link
