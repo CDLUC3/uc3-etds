@@ -14,7 +14,7 @@ CSVQRYNAME = {'ucla':sqlstatements.report_ucla,
               'ucr':sqlstatements.report_ucr,
               'ucsf':sqlstatements.report_ucsf,
               'ucsc':sqlstatements.report_ucsc,
-              'ucd':sqlstatements.report_ucd}
+              'ucdavis':sqlstatements.report_ucdavis}
 
 RETRIEVE_QRYPARAMS = {'ucla':sqlstatements.retrieve_inv_merritt_ingest_ucla,
                       'uci':sqlstatements.retrieve_inv_merritt_ingest,
@@ -23,7 +23,7 @@ RETRIEVE_QRYPARAMS = {'ucla':sqlstatements.retrieve_inv_merritt_ingest_ucla,
                       'ucr':sqlstatements.retrieve_inv_merritt_ingest,
                       'ucsf':sqlstatements.retrieve_inv_merritt_ingest,
                       'ucsc':sqlstatements.retrieve_inv_merritt_ingest,
-                      'ucd':sqlstatements.retrieve_inv_merritt_ingest}
+                      'ucdavis':sqlstatements.retrieve_inv_merritt_ingest}
 
 # UCSB has requested MARC records in the past, hence the associated entry below
 UPD_QRYPARAMS = {'ucla':sqlstatements.upd_merritt_ingest_ucla,
@@ -34,7 +34,7 @@ UPD_QRYPARAMS = {'ucla':sqlstatements.upd_merritt_ingest_ucla,
                  'ucsf':sqlstatements.upd_merritt_ingest,
                  'ucsc':sqlstatements.upd_merritt_ingest,
                  'ucsb':sqlstatements.upd_merritt_ingest,
-                 'ucd':sqlstatements.upd_merritt_ingest}
+                 'ucdavis':sqlstatements.upd_merritt_ingest}
 
 # used to match on Proquest MARC record filenames
 PQ_CAMPUS_NAMES = {'Merced': 'ucmerced',
