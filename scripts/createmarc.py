@@ -268,9 +268,6 @@ def create_marc_xml(hostenv):
                         eschol_link = sqlite_cursor.fetchone()
                         if eschol_link is not None:
                             (campusname, pqmetadatastr) = get_pq_metadata(fullpath)
-                            print("*** ")
-                            print(campusname)
-                            print(pqmetadatastr)
                             # need to print XML prolog for first record
                             if campus_configs[campusname]['create_marc']:
                                 marcrecord = xml_saxon_transform(pqmetadatastr, constants.PQ_XSLT)
@@ -297,15 +294,11 @@ def get_pq_metadata(fullpath):
         pq_zfile = zipfile.ZipFile(fullpath, 'r')
         logging.info('Extracting PQ metadata from zipfile: %s', fullpath)
         for zxml in pq_zfile.namelist():
-            print(zxml)
             if zxml[-9:] == '_DATA.xml':
-                print("*** 2")
                 xmlopen = pq_zfile.open(zxml)
                 xmlstr = xmlopen.read()
                 campuscode = re.search(r'<DISS_inst_code>(\d+)</DISS_inst_code>', xmlstr)
-                print(campuscode)
                 campus = (campus_configs['PQCampusCodes'][campuscode.group(1)])
-                print(campus)
     except zipfile.BadZipfile:
         logging.exception('ERROR occured while trying to unzip file %s', fullpath)
     return(campus, xmlstr)
