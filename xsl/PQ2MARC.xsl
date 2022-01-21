@@ -57,6 +57,9 @@
 		<xsl:when test="$campus_code='0033'">
 			<xsl:call-template name="ucsd_template"/>
 		</xsl:when>
+		<xsl:when test="$campus_code='0029'">
+			<xsl:call-template name="ucd_template"/>
+		</xsl:when>
 		<xsl:otherwise>
 			<xsl:call-template name="exception_template"/>
 		</xsl:otherwise>
@@ -273,6 +276,7 @@
 		</xsl:choose>
 	</marc:record>		
 </xsl:template>
+
 <xsl:template name="ucla_template">
 		<marc:record>
 		<xsl:variable name="date1" select="normalize-space(DISS_description/DISS_dates/DISS_comp_date)" />
@@ -750,6 +754,251 @@
 		</xsl:choose>
 	</marc:record>		
 </xsl:template>
+
+<xsl:template name="ucd_template">
+	<marc:record>
+		<xsl:variable name="date1" select="normalize-space(DISS_description/DISS_dates/DISS_comp_date)" />
+		<xsl:variable name="accept_date" select="normalize-space(DISS_description/DISS_dates/DISS_accept_date)"/>
+		<!--Start by building the LDR, 007 and 008 -->
+		<!--VESTIGIAL NOTE IN ORIGINAL STYLESHEET: Processing problem is somewhere within the leader or controlfield element-->
+		<marc:leader>02211nam a22002897i 4500</marc:leader>
+		<marc:controlfield tag="006">
+			<xsl:text xml:space="preserve">m     o  d        </xsl:text>
+		</marc:controlfield>
+		<marc:controlfield tag="007"><xsl:text>cr |n|||||||||</xsl:text></marc:controlfield>
+		  
+		<marc:controlfield tag="008">
+			<xsl:text>051012t</xsl:text>
+			<xsl:value-of select="$date1" />
+		    <xsl:value-of select="$date1" />
+		    <xsl:text>cau     o     000 0 eng d</xsl:text>
+		</marc:controlfield>
+		  
+		<xsl:for-each select="DISS_authorship/DISS_author">
+			<xsl:if test="@type='primary'">
+				<xsl:variable name="surname" select="DISS_name/DISS_surname" />
+				<xsl:variable name="fname" select="DISS_name/DISS_fname" />
+				<xsl:variable name="middle" select="DISS_name/DISS_middle" />
+				<xsl:variable name="suffix" select="DISS_name/DISS_suffix" />
+				<xsl:variable name="print_name">
+					<xsl:value-of select="$surname" />, <xsl:value-of select="$fname" /><xsl:text> </xsl:text><xsl:value-of select="$middle" />
+				</xsl:variable> 
+				<xsl:call-template name="persname_template">
+					<xsl:with-param name="string" select="normalize-space($print_name)" />
+					<xsl:with-param name="suffix" select="$suffix"/>
+					<xsl:with-param name="field" select="'100'" />
+					<xsl:with-param name="ind1" select = "'1'" />
+					<xsl:with-param name="ind2" select = "' '" />
+					<xsl:with-param name="type" select="'author'" />
+				</xsl:call-template>
+			</xsl:if>
+		</xsl:for-each>
+
+		<xsl:variable name="nonFilingCharsInd">
+			<xsl:call-template name="nonFilingChars">
+				<xsl:with-param name="titlestr" select="DISS_description/DISS_title"/>
+			</xsl:call-template>
+		</xsl:variable>	
+		<marc:datafield>
+			<xsl:attribute name="tag">
+				<xsl:value-of select="245"/>
+			</xsl:attribute>
+			<xsl:attribute name="ind1">
+				<xsl:value-of select="1"/>
+			</xsl:attribute>
+			<xsl:attribute name="ind2">
+				<xsl:value-of select="$nonFilingCharsInd"/>
+			</xsl:attribute>
+			<marc:subfield code="a"><xsl:value-of select="normalize-space(DISS_description/DISS_title)" /> /</marc:subfield>
+			<marc:subfield code="c">by <xsl:if test="string-length(//DISS_authorship/DISS_author/DISS_name/DISS_fname)!=0">
+			<xsl:value-of select="normalize-space(DISS_authorship/DISS_author/DISS_name/DISS_fname)" />
+			</xsl:if><xsl:if test="string-length(//DISS_authorship/DISS_author/DISS_name/DISS_middle)!=0">
+				<xsl:text> </xsl:text><xsl:value-of select="normalize-space(DISS_authorship/DISS_author/DISS_name/DISS_middle)" />
+			</xsl:if><xsl:if test="string-length(//DISS_authorship/DISS_author/DISS_name/DISS_surname)!=0">
+				<xsl:text> </xsl:text><xsl:value-of select="normalize-space(DISS_authorship/DISS_author/DISS_name/DISS_surname)" />
+			</xsl:if><xsl:if test="string-length(//DISS_authorship/DISS_author/DISS_name/DISS_suffix)!=0">
+				<xsl:text> </xsl:text><xsl:value-of select="normalize-space(DISS_authorship/DISS_author/DISS_name/DISS_suffix)" />
+			</xsl:if>.</marc:subfield>
+		</marc:datafield>
+
+		<marc:datafield tag="264" ind1=" " ind2="1">
+			<marc:subfield code="a">[Davis, Calif.] : </marc:subfield>
+			<marc:subfield code="b">University of California, Davis, </marc:subfield>
+			<marc:subfield code="c"><xsl:value-of select="$date1" />.</marc:subfield>
+		</marc:datafield>
+		
+		<marc:datafield tag="264" ind1=" " ind2="4">
+			<marc:subfield code="c">&#169;<xsl:value-of select="$date1" /></marc:subfield>
+		</marc:datafield>
+
+		<xsl:if test="DISS_description">
+			<xsl:variable name="page" select="DISS_description/@page_count" />
+			<marc:datafield tag="300" ind1=" " ind2=" ">
+				<marc:subfield code="a">1 online resource (<xsl:value-of select="$page" /> pages)</marc:subfield>
+			</marc:datafield>
+		</xsl:if>
+		<marc:datafield tag="336" ind1=" " ind2=" ">
+			<marc:subfield code="a">text</marc:subfield>
+			<marc:subfield code="b">txt</marc:subfield>
+			<marc:subfield code="2">rdacontent</marc:subfield>
+		</marc:datafield>
+		  
+		<marc:datafield tag="337" ind1=" " ind2=" ">
+			<marc:subfield code="a">computer</marc:subfield>
+			<marc:subfield code="b">c</marc:subfield>
+			<marc:subfield code="2">rdamedia</marc:subfield>
+		</marc:datafield>
+		  
+		<marc:datafield tag="338" ind1=" " ind2=" ">
+			<marc:subfield code="a">online resource</marc:subfield>
+			<marc:subfield code="b">cr</marc:subfield>
+			<marc:subfield code="2">rdacarrier</marc:subfield>
+		</marc:datafield>
+		
+		<xsl:if test="DISS_description/DISS_advisor">
+			<xsl:for-each select="DISS_description/DISS_advisor">
+				<marc:datafield tag="500" ind1=" " ind2=" ">
+					<marc:subfield code="a"><xsl:if test="string-length(./DISS_name/DISS_fname)!=0">
+					<xsl:value-of select="normalize-space(./DISS_name/DISS_fname)" />
+				</xsl:if><xsl:if test="string-length(./DISS_name/DISS_middle)!=0">
+					<xsl:text> </xsl:text><xsl:value-of select="normalize-space(./DISS_name/DISS_middle)" />
+				</xsl:if><xsl:if test="string-length(./DISS_name/DISS_surname)!=0">
+					<xsl:text> </xsl:text><xsl:value-of select="normalize-space(./DISS_name/DISS_surname)" />
+				</xsl:if><xsl:if test="string-length(./DISS_name/DISS_suffix)!=0">
+					<xsl:text> </xsl:text><xsl:value-of select="normalize-space(./DISS_name/DISS_suffix)" />
+				</xsl:if>, advisor.</marc:subfield>
+				</marc:datafield>
+			</xsl:for-each>
+		</xsl:if>
+
+		<marc:datafield tag="588" ind1=" " ind2=" ">
+			<xsl:variable name="dateToday" select="current-date()" />
+			<marc:subfield code="a">Description based on information submitted by author (created <xsl:value-of select="format-date($dateToday, '[MNn] [D], [Y]')"/>).</marc:subfield>		
+		</marc:datafield>
+
+		<marc:datafield tag="502" ind1=" " ind2=" ">
+			<xsl:variable name="degree" select="DISS_description/DISS_degree" />
+		    <xsl:variable name="org" select="DISS_description/DISS_institution/DISS_inst_name" />
+			<marc:subfield code="g">Thesis</marc:subfield>
+			<marc:subfield code="b"><xsl:value-of select="$degree" /></marc:subfield>
+			<marc:subfield code="c"><xsl:value-of select="$org" /></marc:subfield>
+			<marc:subfield code="d"><xsl:value-of select="$date1" />.</marc:subfield>
+		</marc:datafield>
+
+<!-- Creates 506 for embargoed ETD based on embargo code; ETDs with embargo code 0 have no 506 field -->		
+		<xsl:if test="@embargo_code!=0">
+			<marc:datafield tag="506" ind1=" " ind2=" ">
+				<marc:subfield code="a">Embargoed until <xsl:call-template name="calculate_embargo_enddate">
+					<xsl:with-param name="embargocode" select="@embargo_code"/>
+					<xsl:with-param name="submit_date" select="$accept_date"/>
+					<xsl:with-param name="embargo_code4" select="$embargo_end_date_string"/>
+				</xsl:call-template>.</marc:subfield>
+			</marc:datafield>
+		</xsl:if>
+
+		<xsl:if test="DISS_content/DISS_abstract/DISS_para">
+			<xsl:variable name="Abstract">
+				<xsl:for-each select="DISS_content/DISS_abstract/DISS_para">
+					<xsl:value-of select="normalize-space(.)"/><xsl:text>&#160;</xsl:text>
+				</xsl:for-each>
+			</xsl:variable>
+			<xsl:if test="string-length($Abstract)!=0">
+				<marc:datafield tag="520" ind1="3" ind2=" ">
+					<xsl:if test="string-length($Abstract)&lt;9980">
+						<marc:subfield code="a">
+							<xsl:value-of select="$Abstract" />
+						</marc:subfield>  
+					</xsl:if>
+		      		<xsl:if test="string-length($Abstract)&gt;9980">
+						<marc:subfield code="a">
+							<xsl:value-of select="substring($Abstract, 1, 9980)" />...</marc:subfield>
+					</xsl:if>
+				</marc:datafield>
+			</xsl:if>
+		</xsl:if>
+		  
+		<xsl:if test="string-length(//DISS_keyword)!=0">
+			<marc:datafield tag="653" ind1=" " ind2=" ">
+				<xsl:for-each select="tokenize(//DISS_keyword, ', ')">
+					<marc:subfield code="a">
+						<xsl:value-of select="."/>
+					</marc:subfield>
+				</xsl:for-each>
+			</marc:datafield>
+		</xsl:if>
+		<!--  uses alternate below, which provides department instead of category description for degree. -->
+		<xsl:for-each select="DISS_description/DISS_institution">
+			<marc:datafield tag="655" ind1=" " ind2="7">
+				<marc:subfield code="a">Dissertations, Academic</marc:subfield>
+				<marc:subfield code="z">UCD</marc:subfield>
+				<marc:subfield code="x"><xsl:value-of select="DISS_inst_contact" />.</marc:subfield>
+				<marc:subfield code="2">local</marc:subfield>
+			</marc:datafield>  
+		</xsl:for-each>
+
+		<marc:datafield tag="793" ind1="0" ind2=" ">
+			<marc:subfield code="a">UCD online theses and dissertations.</marc:subfield>
+		</marc:datafield> 
+
+		<marc:datafield tag="793" ind1="0" ind2=" ">
+			<marc:subfield code="a">Open access resource; selected by the UC Davis Library.</marc:subfield>
+			<marc:subfield code="p">eScholarship online dissertations.</marc:subfield>
+		</marc:datafield>
+		
+		<xsl:for-each select="DISS_authorship/DISS_author">
+			<xsl:if test="@type!='primary'">
+				<xsl:variable name="surname" select="DISS_name/DISS_surname" />
+				<xsl:variable name="fname" select="DISS_name/DISS_fname" />
+				<xsl:variable name="middle" select="DISS_name/DISS_middle" />
+				<xsl:variable name="suffix" select="DISS_name/DISS_suffix" />
+				<xsl:variable name="print_name">
+					<xsl:value-of select="$surname" /> <xsl:value-of select="$suffix" />, <xsl:value-of select="$fname" /><xsl:text> </xsl:text><xsl:value-of select="$middle" />
+				</xsl:variable>
+				<xsl:call-template name="persname_template">
+					<xsl:with-param name="string" select="normalize-space($print_name)" />
+					<xsl:with-param name="suffix" select="$suffix"/>
+					<xsl:with-param name="field" select="'700'" />
+					<xsl:with-param name="ind1" select = "'1'" />
+					<xsl:with-param name="ind2" select = "' '" />
+					<xsl:with-param name="type" select="'author'" />
+				</xsl:call-template>
+			</xsl:if>
+		</xsl:for-each>
+		
+		<xsl:choose>
+			<xsl:when test="@embargo_code=0">
+				<marc:datafield tag="856" ind1="4" ind2="0">
+					<marc:subfield code="z">Open Access via eScholarship</marc:subfield>
+					<marc:subfield code="u">
+						<xsl:call-template name="lookupEScholLink">
+							<xsl:with-param name="local_id">
+								<xsl:call-template name="get_local_id"/>
+							</xsl:with-param>
+						</xsl:call-template>
+					</marc:subfield>
+				</marc:datafield>
+			</xsl:when>
+			<xsl:otherwise>
+				<marc:datafield tag="856" ind1="4" ind2="0">
+					<marc:subfield code="z">eScholarship. Embargoed until <xsl:call-template name="calculate_embargo_enddate">
+							<xsl:with-param name="embargocode" select="@embargo_code"/>
+							<xsl:with-param name="submit_date" select="$accept_date"/>
+							<xsl:with-param name="embargo_code4" select="$embargo_end_date_string"/>
+						</xsl:call-template>
+					</marc:subfield>
+					<marc:subfield code="u">
+						<xsl:call-template name="lookupEScholLink">
+							<xsl:with-param name="local_id">
+								<xsl:call-template name="get_local_id"/>
+							</xsl:with-param>
+						</xsl:call-template>
+					</marc:subfield>
+				</marc:datafield>
+			</xsl:otherwise>
+		</xsl:choose>
+	</marc:record>		
+</xsl:template>
+
 <xsl:template name="exception_template">
 
 <xsl:result-document method="text" href="/apps/etds/apps/uc3-etds/marc/etd{$localID}.txt">

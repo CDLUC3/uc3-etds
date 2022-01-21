@@ -21,7 +21,7 @@ ucdavis:
     etd_delivery: True
     delivery_method: email 
     create_marc: True
-    delivery_marc: False
+    delivery_marc: True
     delivery_csv: True
     pq_campus_code: 0029
     pqmarcxslt: None
@@ -41,7 +41,7 @@ uci:
     delivery_csv: True
     pq_campus_code: 0030
     pqmarcxslt: PQ-MARC-uci.xsl 
-    contact_email: ['eric.lopatin@ucop.edu'] 
+    contact_email: ['jlecampbell@ucdavis.edu','eric.lopatin@ucop.edu'] 
     sftp_user: ucietd 
     sftp_retrieve_dir: proquest
     sftp_delivery_dir: ucietd 
@@ -51,16 +51,16 @@ ucla:
     eschol: True
     eschol_abbr: ucla
     etd_delivery: True
-    delivery_method: sftp 
+    delivery_method: email 
     create_marc: True 
     delivery_marc: True
     delivery_csv: False
     pq_campus_code: 0031
     pqmarcxslt: None
-    contact_email: ['eric.lopatin@ucop.edu'] 
+    contact_email: ['hermine@library.ucla.edu','ezhang20@library.ucla.edu','eric.lopatin@ucop.edu'] 
     sftp_user: uclaetd 
     sftp_retrieve_dir: uclaetd/etds
-    sftp_delivery_dir: uclaetd/marc 
+    sftp_delivery_dir: None 
     
 # UC Merced
 ucmerced:
