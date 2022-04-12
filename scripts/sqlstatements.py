@@ -152,6 +152,3 @@ SELECT eschol_link, merritt_ark FROM escholfeed WHERE date(merritt_submit_date)=
 retrieve_new_eschol_links="""
 select merritt_ingest.obj_title, merritt_ingest.obj_creator, merritt_ingest.obj_date, escholfeed.eschol_link from merritt_ingest, escholfeed where merritt_ingest.merritt_ark=escholfeed.merritt_ark and date(escholfeed.merritt_submit_date)=date('now');
 """
-retrieve_new_eschol_links_ucb="""
-select tmp_merritt_ark.title, tmp_merritt_ark.author, tmp_merritt_ark.date, escholfeed.eschol_link FROM tmp_merritt_ark, escholfeed WHERE escholfeed.merritt_ark=tmp_merritt_ark.merritt_ark
-"""
