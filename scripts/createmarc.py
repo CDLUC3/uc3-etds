@@ -969,7 +969,8 @@ def main():
 # update/create EZID records
     update_ezid_mrtarks(hostenv)
     create_ezid_escholarks(hostenv, sqlstatements.retrieve_new_eschol_links)
-    create_ezid_escholarks(hostenv, sqlstatements.retrieve_new_eschol_links_ucb)
+    # 2022-04-11 Commenting out this unique operation as we are normalizing UCB process
+    # create_ezid_escholarks(hostenv, sqlstatements.retrieve_new_eschol_links_ucb)
 # clean up
     delete_working_files(hostenv)
     delete_empty_dirs(hostenv)

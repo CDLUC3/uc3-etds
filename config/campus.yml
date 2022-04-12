@@ -2,16 +2,16 @@
 ucb:
     eschol: True
     eschol_abbr: ucb
-    etd_delivery: False
-    delivery_method: None 
-    create_marc: False
-    delivery_marc: False
-    delivery_csv: False
+    etd_delivery: True
+    delivery_method: email 
+    create_marc: True
+    delivery_marc: True
+    delivery_csv: True
     pq_campus_code: 0028
     pqmarcxslt: None
-    contact_email: None 
-    sftp_user: None
-    sftp_retrieve_dir: None
+    contact_email: ['eric.lopatin@ucop.edu'] 
+    sftp_user: proquest
+    sftp_retrieve_dir: proquest
     sftp_delivery_dir: None
     
 # UC Davis
@@ -25,7 +25,7 @@ ucdavis:
     delivery_csv: True
     pq_campus_code: 0029
     pqmarcxslt: None
-    contact_email: ['eric.lopatin@ucop.edu']
+    contact_email: ['jlecampbell@ucdavis.edu','eric.lopatin@ucop.edu']
     sftp_user: proquest
     sftp_retrieve_dir: proquest
     sftp_delivery_dir: None
@@ -41,7 +41,7 @@ uci:
     delivery_csv: True
     pq_campus_code: 0030
     pqmarcxslt: PQ-MARC-uci.xsl 
-    contact_email: ['jlecampbell@ucdavis.edu','eric.lopatin@ucop.edu'] 
+    contact_email: ['eric.lopatin@ucop.edu'] 
     sftp_user: ucietd 
     sftp_retrieve_dir: proquest
     sftp_delivery_dir: ucietd 
