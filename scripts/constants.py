@@ -5,8 +5,8 @@ PQMETADATAXSL = '/apps/etds/apps/uc3-etds/xsl/manifest.xsl'
 # used by pq-gateway.py
 PQAPIXSL = '/apps/etds/apps/uc3-etds/xsl/pqetd.xsl'
 # used by createmarc.py
-# UCB and UCSB entries are not present in the following queries as they 
-# do not currently ask for MARC records
+# A UCSB entry is not present in the following queries as UCSB 
+# does not currently ask for MARC records
 CSVQRYNAME = {'ucla':sqlstatements.report_ucla,
               'uci':sqlstatements.report_uci,
               'ucsd':sqlstatements.report_ucsd,
@@ -14,7 +14,8 @@ CSVQRYNAME = {'ucla':sqlstatements.report_ucla,
               'ucr':sqlstatements.report_ucr,
               'ucsf':sqlstatements.report_ucsf,
               'ucsc':sqlstatements.report_ucsc,
-              'ucdavis':sqlstatements.report_ucdavis}
+              'ucdavis':sqlstatements.report_ucdavis,
+              'ucb':sqlstatements.report_ucb}
 
 RETRIEVE_QRYPARAMS = {'ucla':sqlstatements.retrieve_inv_merritt_ingest_ucla,
                       'uci':sqlstatements.retrieve_inv_merritt_ingest,
@@ -23,7 +24,8 @@ RETRIEVE_QRYPARAMS = {'ucla':sqlstatements.retrieve_inv_merritt_ingest_ucla,
                       'ucr':sqlstatements.retrieve_inv_merritt_ingest,
                       'ucsf':sqlstatements.retrieve_inv_merritt_ingest,
                       'ucsc':sqlstatements.retrieve_inv_merritt_ingest,
-                      'ucdavis':sqlstatements.retrieve_inv_merritt_ingest}
+                      'ucdavis':sqlstatements.retrieve_inv_merritt_ingest,
+                      'ucb':sqlstatements.retrieve_inv_merritt_ingest}
 
 # UCSB has requested MARC records in the past, hence the associated entry below
 UPD_QRYPARAMS = {'ucla':sqlstatements.upd_merritt_ingest_ucla,
