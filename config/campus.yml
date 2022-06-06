@@ -54,7 +54,7 @@ ucla:
     delivery_method: email 
     create_marc: True 
     delivery_marc: True
-    delivery_csv: False
+    delivery_csv: True
     pq_campus_code: 0031
     pqmarcxslt: None
     contact_email: ['hermine@library.ucla.edu','ezhang20@library.ucla.edu','eric.lopatin@ucop.edu'] 
