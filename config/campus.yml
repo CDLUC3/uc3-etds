@@ -9,7 +9,7 @@ ucb:
     delivery_csv: True
     pq_campus_code: 0028
     pqmarcxslt: None
-    contact_email: ['eric.lopatin@ucop.edu'] 
+    contact_email: ['davidtriebwasser@berkeley.edu','eric.lopatin@ucop.edu'] 
     sftp_user: proquest
     sftp_retrieve_dir: proquest
     sftp_delivery_dir: None
