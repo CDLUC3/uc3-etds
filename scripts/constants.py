@@ -36,7 +36,8 @@ UPD_QRYPARAMS = {'ucla':sqlstatements.upd_merritt_ingest_ucla,
                  'ucsf':sqlstatements.upd_merritt_ingest,
                  'ucsc':sqlstatements.upd_merritt_ingest,
                  'ucsb':sqlstatements.upd_merritt_ingest,
-                 'ucdavis':sqlstatements.upd_merritt_ingest}
+                 'ucdavis':sqlstatements.upd_merritt_ingest,
+                 'ucb':sqlstatements.upd_merritt_ingest}
 
 # used to match on Proquest MARC record filenames
 PQ_CAMPUS_NAMES = {'Merced': 'ucmerced',
