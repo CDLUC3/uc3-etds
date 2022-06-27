@@ -363,6 +363,8 @@ def check_if_ok_to_delete(zipfilename, hostenv):
     localid = etddb_cursor.fetchone()
     if localid is not None:
         campusabbr = re.sub(r'(^PQETD:)(.*?)(\d*$)', r'\2', localid[0])
+        if campusabbr == 'berkeley':
+            campusabbr = 'ucb'
 # okay to delete if it's not one of the campuses that receive MARC records
         if campus_configs[campusabbr]['create_marc']:
 # if it is one of the campuses to receive MARC records, then check if
