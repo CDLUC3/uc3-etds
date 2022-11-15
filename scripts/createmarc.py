@@ -99,8 +99,7 @@ def get_inv_db_query(hostenv, sqlquery, data):
     mrt_ingest_array = []
     try:
         mysql_connect = mysql.connector.connect(user=username, password=passwd,
-                                                host=hostname, database=dbname,
-                                                ssl_ca=ssl_cert)
+                                                host=hostname, database=dbname)
         mysql_cursor = mysql_connect.cursor()
     except mysql.connector.Error as err:
         logging.exception("ERROR connecting to INV DB: %s", err.message)
@@ -362,7 +361,7 @@ def check_if_ok_to_delete(zipfilename, hostenv):
         logging.exception("ERROR executing query in ETD DB %s", err)
     localid = etddb_cursor.fetchone()
     if localid is not None:
-        campusabbr = re.sub(r'(^PQETD:)(.*?)(\d*$)', r'\2', localid[0])
+        campusabbr = re.sub(r'(^.*PQETD:)(.*?)(\d*$)', r'\2', localid[0])
         if campusabbr == 'berkeley':
             campusabbr = 'ucb'
 # okay to delete if it's not one of the campuses that receive MARC records
