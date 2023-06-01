@@ -25,7 +25,7 @@ ucdavis:
     delivery_csv: True
     pq_campus_code: 0029
     pqmarcxslt: None
-    contact_email: ['jlecampbell@ucdavis.edu','eric.lopatin@ucop.edu']
+    contact_email: ['tjkao@ucdavis.edu','eric.lopatin@ucop.edu']
     sftp_user: proquest
     sftp_retrieve_dir: proquest
     sftp_delivery_dir: None
