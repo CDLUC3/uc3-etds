@@ -11,6 +11,7 @@
 <xsl:key name="ISBN" match="row" use="value"/>
 <xsl:key name="subject" match="row" use="value"/>
 <xsl:variable name="lookupISBN" select="document('PQ-Merritt-match.xml')"/>
+<!--uci-subjects xml used to record UCI degrees for ETD database -->
 <xsl:variable name="lookupSubj" select="document('uci-subjects.xml')"/>
 <xsl:template match="@*|node()">
 	<xsl:copy>
@@ -78,6 +79,8 @@
 				</xsl:when>
 				<xsl:otherwise>
 					<xsl:text>ERROR</xsl:text>
+					<!-- Added value-of statement to debug problematic value population -->
+					<xsl:value-of select="$degree"/>
 				</xsl:otherwise>
 			</xsl:choose>
 		</marc:subfield>
@@ -85,8 +88,15 @@
 			<xsl:call-template name="lookupUCISubj"> 
 				<xsl:with-param name="subj_area"> 
 					<xsl:choose>
+						<!-- 2023-08-17 Added new when blocks for open paren, and FNP string -->
 						<xsl:when test="contains(../marc:datafield[@tag = '710']/marc:subfield[@code = 'b'], ' -')">
 							<xsl:value-of select="substring-before(../marc:datafield[@tag = '710']/marc:subfield[@code = 'b'], ' -')"/>
+						</xsl:when>
+						<xsl:when test="contains(../marc:datafield[@tag = '710']/marc:subfield[@code = 'b'], ' (')">
+							<xsl:value-of select="substring-before(../marc:datafield[@tag = '710']/marc:subfield[@code = 'b'], ' (')"/>
+						</xsl:when>
+						<xsl:when test="contains(../marc:datafield[@tag = '710']/marc:subfield[@code = 'b'], ', FNP (')">
+							<xsl:value-of select="substring-before(../marc:datafield[@tag = '710']/marc:subfield[@code = 'b'], ', FNP (')"/>
 						</xsl:when>
 						<xsl:otherwise>
 							<xsl:value-of select="substring-before(../marc:datafield[@tag = '710']/marc:subfield[@code = 'b'], '.')"/>

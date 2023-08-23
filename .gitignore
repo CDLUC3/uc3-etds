@@ -4,7 +4,9 @@ saxon9he.jar
 logs/*.*
 *.pyc
 *.zip
-*.xml
 *.mrc
 *.list
 test/
+xsl/mrt-eschol-pq.xml
+UCD/ucdavis20220215-orig.xml
+xsl/PQ-Merritt-match.xml
