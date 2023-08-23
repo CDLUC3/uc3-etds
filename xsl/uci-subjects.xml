@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<table>
+    <database></database>
+    <name>uci_subjects</name>
+    <ddl>CREATE TABLE [uci_subjects] ([subject] VARCHAR, [cutter] VARCHAR, [location] VARCHAR, [last_update] DATE);</ddl>
+    <columns>
+        <column>
+            <name>subject</name>
+            <type>VARCHAR</type>
+        </column>
+        <column>
+            <name>cutter</name>
+            <type>VARCHAR</type>
+        </column>
+        <column>
+            <name>location</name>
+            <type>VARCHAR</type>
+        </column>
+        <column>
+            <name>last_update</name>
+            <type>DATE</type>
+        </column>
+    </columns>
+    <rows>
+        <row>
+            <value column="0">Administration (no longer granted as of 2013?)</value>
+            <value column="1">A3</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Anthropology</value>
+            <value column="1">A6</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">ART</value>
+            <value column="1">A67</value>
+            <value column="2"></value>
+            <value column="3">2023-03-27</value>
+        </row>
+        <row>
+            <value column="0">Art History (no longer granted as of 2013?)</value>
+            <value column="1">A7</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Art History</value>
+            <value column="1">A7</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Asian American Studies</value>
+            <value column="1">A8</value>
+            <value column="2"></value>
+            <value column="3">2023-03-27</value>
+        </row>
+        <row>
+            <value column="0">Biological Sciences</value>
+            <value column="1">B5</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Biomedical and Translational Science</value>
+            <value column="1">B54</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Biomedical Engineering</value>
+            <value column="1">B56</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Biomedical Sciences</value>
+            <value column="1">B58</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Biotechnology</value>
+            <value column="1">B59</value>
+            <value column="2"></value>
+            <value column="3">2023-03-27</value>
+        </row>
+        <row>
+            <value column="0">Biotechnology Management</value>
+            <value column="1">B596</value>
+            <value column="2"></value>
+            <value column="3">2023-03-27</value>
+        </row>
+        <row>
+            <value column="0">Business Administration</value>
+            <value column="1">A3</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Business Analytics</value>
+            <value column="1">B8</value>
+            <value column="2"></value>
+            <value column="3">2023-03-27</value>
+        </row>
+        <row>
+            <value column="0">Cellular and Molecular Biosciences</value>
+            <value column="1">C3</value>
+            <value column="2"></value>
+            <value column="3">2023-03-27</value>
+        </row>
+        <row>
+            <value column="0">Chemical and Biochemical Engineering</value>
+            <value column="1">C42</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Chemical and Biomolecular Engineering</value>
+            <value column="1">C423</value>
+            <value column="2"></value>
+            <value column="3">2023-03-27</value>
+        </row>
+        <row>
+            <value column="0">Chemical and Material Physics</value>
+            <value column="1">C425</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Chemical Engineering (no longer granted as of 2013?)</value>
+            <value column="1">C43</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Chemistry</value>
+            <value column="1">C45</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Civil and Environmental Engineering</value>
+            <value column="1">C47</value>
+            <value column="2"></value>
+            <value column="3">2023-03-27</value>
+        </row>
+        <row>
+            <value column="0">Civil Engineering</value>
+            <value column="1">C48</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Classics</value>
+            <value column="1">C5</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Cognitive Sciences</value>
+            <value column="1">C54</value>
+            <value column="2"></value>
+            <value column="3">2023-03-27</value>
+        </row>
+        <row>
+            <value column="0">Comparative Culture (no longer granted as of 2013?)</value>
+            <value column="1">C55</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Comparative Literature</value>
+            <value column="1">C6</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Computer Engineering</value>
+            <value column="1">C64</value>
+            <value column="2"></value>
+            <value column="3">2023-03-27</value>
+        </row>
+        <row>
+            <value column="0">Computer Science</value>
+            <value column="1">C65</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Creative Writing</value>
+            <value column="1">C67</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Criminology, Law and Society</value>
+            <value column="1">C7</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Culture and Theory</value>
+            <value column="1">C8</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Dance</value>
+            <value column="1">D3</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Drama</value>
+            <value column="1">D7</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Drama and Theatre</value>
+            <value column="1">D73</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Earth System Science</value>
+            <value column="1">E19</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">East Asian Languages and Literatures</value>
+            <value column="1">E2</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Ecology and Evolutionary Biology</value>
+            <value column="1">E25</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Economics</value>
+            <value column="1">E3</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Education</value>
+            <value column="1">E33</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Educational Administration</value>
+            <value column="1">E34</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Educational Administration and Leadership</value>
+            <value column="1">E35</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Electrical and Computer Engineering</value>
+            <value column="1">E38</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Electrical Engineering (no longer granted as of 2013?)</value>
+            <value column="1">E39</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Embedded and Cyber-Physical Systems</value>
+            <value column="1">E395</value>
+            <value column="2"></value>
+            <value column="3">2023-03-27</value>
+        </row>
+        <row>
+            <value column="0">Engineering</value>
+            <value column="1">E4</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">English</value>
+            <value column="1">E5</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Environmental Analysis and Design</value>
+            <value column="1">E586</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Environmental Health Science and Policy</value>
+            <value column="1">E59</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Environmental Toxicology</value>
+            <value column="1">E6</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Epidemiology</value>
+            <value column="1">E7</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">European Thought and Culture</value>
+            <value column="1">E9</value>
+            <value column="2"></value>
+            <value column="3">2023-03-27</value>
+        </row>
+        <row>
+            <value column="0">Film and Media Studies</value>
+            <value column="1">F45</value>
+            <value column="2"></value>
+            <value column="3">2023-03-27</value>
+        </row>
+        <row>
+            <value column="0">Fine Arts</value>
+            <value column="1">F5</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">French</value>
+            <value column="1">F7</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Genetic Counseling</value>
+            <value column="1">G3</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">German</value>
+            <value column="1">G5</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Global Studies</value>
+            <value column="1">G6</value>
+            <value column="2"></value>
+            <value column="3">2023-03-27</value>
+        </row>
+        <row>
+            <value column="0">Health Psychology (no longer granted as of 2013?)</value>
+            <value column="1">H4</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">History</value>
+            <value column="1">H5</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Human Computer Interaction and Design</value>
+            <value column="1">H76</value>
+            <value column="2"></value>
+            <value column="3">2023-03-27</value>
+        </row>
+        <row>
+            <value column="0">Human Development (no longer granted as of 2013?)</value>
+            <value column="1">H8</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Informatics</value>
+            <value column="1">I45</value>
+            <value column="2"></value>
+            <value column="3">2023-03-27</value>
+        </row>
+        <row>
+            <value column="0">Information and Computer Science</value>
+            <value column="1">I5</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Innovation and Entrepreneurship</value>
+            <value column="1">I55</value>
+            <value column="2"></value>
+            <value column="3">2023-03-27</value>
+        </row>
+        <row>
+            <value column="0">Interdepartmental Neuroscience Gateway</value>
+            <value column="1">I58</value>
+            <value column="2"></value>
+            <value column="3">2023-03-27</value>
+        </row>
+        <row>
+            <value column="0">Linguistics (no longer granted as of 2013?)</value>
+            <value column="1">L5</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Management</value>
+            <value column="1">M28</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Materials Science and Engineering</value>
+            <value column="1">M29</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Mathematical, Computational and Systems Biology</value>
+            <value column="1">M295</value>
+            <value column="2"></value>
+            <value column="3">2023-03-27</value>
+        </row>
+        <row>
+            <value column="0">Mathematics</value>
+            <value column="1">M3</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Mechanical and Aerospace Engineering</value>
+            <value column="1">M36</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Mechanical Engineering</value>
+            <value column="1">M37</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Music</value>
+            <value column="1">M8</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Music - Integrated Composition, Improvisation, and Technology</value>
+            <value column="1">M85</value>
+            <value column="2"></value>
+            <value column="3">2023-03-27</value>
+        </row>
+        <row>
+            <value column="0">History and Theory of Music</value>
+            <value column="1">M86</value>
+            <value column="2"></value>
+            <value column="3">2023-03-27</value>
+        </row>
+        <row>
+            <value column="0">Networked Systems</value>
+            <value column="1">N37</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Nursing Science</value>
+            <value column="1">N87</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Pharmacological Sciences</value>
+            <value column="1">P44</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Pharmacology and Toxicology</value>
+            <value column="1">P45</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Philosophy</value>
+            <value column="1">P5</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Physics</value>
+            <value column="1">P6</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Planning, Policy and Design</value>
+            <value column="1">P63</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Political Science</value>
+            <value column="1">P65</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Psychological Science</value>
+            <value column="1">P7</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Psychology and Social Behavior</value>
+            <value column="1">P75</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Public Health</value>
+            <value column="1">P84</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Public Policy</value>
+            <value column="1">P86</value>
+            <value column="2"></value>
+            <value column="3">2023-03-27</value>
+        </row>
+        <row>
+            <value column="0">Radiological Sciences (no longer granted as of 2013?)</value>
+            <value column="1">R3</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Social Ecology</value>
+            <value column="1">S5</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Social Science</value>
+            <value column="1">S56</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Sociology</value>
+            <value column="1">S57</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Software Engineering</value>
+            <value column="1">S59</value>
+            <value column="2"></value>
+            <value column="3">2023-03-27</value>
+        </row>
+        <row>
+            <value column="0">Spanish</value>
+            <value column="1">S6</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Statistics</value>
+            <value column="1">S83</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Studio Art</value>
+            <value column="1">S89</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Transportation Science</value>
+            <value column="1">T7</value>
+            <value column="2">Ayala</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Urban and Regional Planning</value>
+            <value column="1">U7</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Visual Studies</value>
+            <value column="1">V5</value>
+            <value column="2">Langson</value>
+            <value column="3">2015-04-02</value>
+        </row>
+        <row>
+            <value column="0">Environmental Health Sciences</value>
+            <value column="1">E59</value>
+            <value column="2">Ayala</value>
+            <value column="3">2016-07-25</value>
+        </row>
+        <row>
+            <value column="0">Planning, Policy, and Design</value>
+            <value column="1">P63</value>
+            <value column="2">Langson</value>
+            <value column="3">2016-07-25</value>
+        </row>
+    </rows>
+</table>
