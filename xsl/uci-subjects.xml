@@ -621,6 +621,204 @@
             <value column="1">P63</value>
             <value column="2">Langson</value>
             <value column="3">2016-07-25</value>
+        </row> <!-- New codes as of 2024-04-05 below -->
+        <row>
+            <value column="0">Accountancy</value>
+            <value column="1">A2</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">Advanced Manufacturing – Master of Engineering</value>
+            <value column="1">A4</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">Chemical, Applied, and Materials Physics – Chemistry</value>
+            <value column="1">C426</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">Chemical, Applied, and Materials Physics – Physics</value>
+            <value column="1">C427</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">Cognitive Sciences with a concentration in Cognitive Neuroscience</value>
+            <value column="1">C545</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">Computational Science</value>
+            <value column="1">C651</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">Conservation and Restoration Science</value>
+            <value column="1">C66</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">Data Science</value>
+            <value column="1">D4</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">Doctor of Nursing Practice - Family Nurse Practitioner</value>
+            <value column="1">N871</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">East Asian Studies</value>
+            <value column="1">E21</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">Economics – Monetary Policy and Central Banking</value>
+            <value column="1">E311</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">Economics – Public Choice</value>
+            <value column="1">E312</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">Economics – Transportation Economics</value>
+            <value column="1">E313</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">Electrical Engineering and Computer Science – Master of Engineering</value>
+            <value column="1">E381</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">Engineering with concentration in Materials and Manufacturing Technology</value>
+            <value column="1">E41</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">English (Creative Writing) M.F.A.</value>
+            <value column="1">E51</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">Environmental Health Sciences</value>
+            <value column="1">E587</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">Executive MBA</value>
+            <value column="1">B7</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">Finance-MFin</value>
+            <value column="1">F46</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">Innovation and Entrepreneurship</value>
+            <value column="1">I55</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">Law and Graduate Studies: J.D./Masters; J.D./Ph.D</value>
+            <value column="1">L46</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">Legal and Forensic Psychology</value>
+            <value column="1">P74</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">Logic and Philosophy of Science</value>
+            <value column="1">L6</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">Pharmacology</value>
+            <value column="1">P456</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">Nursing Science-Community and Population Health Concentration (MEPN)</value>
+            <value column="1">N872</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">Pharmacy (Doctor of Pharmacy) Dpharm</value>
+            <value column="1">P46</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">Physics with the concentration in Astronomy and Astrophysics</value>
+            <value column="1">P61</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">Physiology and Biophysics</value>
+            <value column="1">P62</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">Psychological Science</value>
+            <value column="1">P71</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">Psychological Science with a concentration in Clinical Psychology</value>
+            <value column="1">P72</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">Social Science-Demographic and Social Analysis</value>
+            <value column="1">S561</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">Social Science-Medicine, Science and Technology Studies</value>
+            <value column="1">S562</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
+        </row>
+        <row>
+            <value column="0">Teaching Arts</value>
+            <value column="1">T2</value>
+            <value column="2">Langson</value>
+            <value column="3">2024-05-05</value>
         </row>
     </rows>
-</table>
+</table>   
