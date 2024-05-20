@@ -11,6 +11,7 @@
 <xsl:key name="ISBN" match="row" use="value"/>
 <xsl:key name="subject" match="row" use="value"/>
 <xsl:variable name="lookupISBN" select="document('PQ-Merritt-match.xml')"/>
+<!--uci-subjects xml used for addition of new UCI degrees to database -->
 <xsl:variable name="lookupSubj" select="document('uci-subjects.xml')"/>
 <xsl:template match="@*|node()">
 	<xsl:copy>
@@ -78,6 +79,8 @@
 				</xsl:when>
 				<xsl:otherwise>
 					<xsl:text>ERROR</xsl:text>
+					<!-- Added value-of statement to debug problematic value population -->
+					<xsl:value-of select="$degree"/>
 				</xsl:otherwise>
 			</xsl:choose>
 		</marc:subfield>
@@ -85,8 +88,15 @@
 			<xsl:call-template name="lookupUCISubj"> 
 				<xsl:with-param name="subj_area"> 
 					<xsl:choose>
+						<!-- 2023-08-17 Added new when blocks for open paren, and FNP string -->
 						<xsl:when test="contains(../marc:datafield[@tag = '710']/marc:subfield[@code = 'b'], ' -')">
 							<xsl:value-of select="substring-before(../marc:datafield[@tag = '710']/marc:subfield[@code = 'b'], ' -')"/>
+						</xsl:when>
+						<xsl:when test="contains(../marc:datafield[@tag = '710']/marc:subfield[@code = 'b'], ' (')">
+							<xsl:value-of select="substring-before(../marc:datafield[@tag = '710']/marc:subfield[@code = 'b'], ' (')"/>
+						</xsl:when>
+						<xsl:when test="contains(../marc:datafield[@tag = '710']/marc:subfield[@code = 'b'], ', FNP (')">
+							<xsl:value-of select="substring-before(../marc:datafield[@tag = '710']/marc:subfield[@code = 'b'], ', FNP (')"/>
 						</xsl:when>
 						<xsl:otherwise>
 							<xsl:value-of select="substring-before(../marc:datafield[@tag = '710']/marc:subfield[@code = 'b'], '.')"/>
@@ -295,19 +305,19 @@
 	</xsl:variable>
 	<xsl:choose>
 		<xsl:when test="$embargo_code=0">
-			<marc:datafield tag="856" ind1="4" ind2="8"><marc:subfield code="z">Open Access via eScholarship</marc:subfield><marc:subfield code="u"><xsl:call-template name="lookupEScholLink"><xsl:with-param name="isbn" select="$isbn"/></xsl:call-template></marc:subfield></marc:datafield>
-			<marc:datafield tag="856" ind1="4" ind2="8"><marc:subfield code="z">Proquest. Restricted to UCI.</marc:subfield>
+			<marc:datafield tag="856" ind1="4" ind2="0"><marc:subfield code="z">Open Access via eScholarship</marc:subfield><marc:subfield code="u"><xsl:call-template name="lookupEScholLink"><xsl:with-param name="isbn" select="$isbn"/></xsl:call-template></marc:subfield></marc:datafield>
+			<marc:datafield tag="856" ind1="4" ind2="0"><marc:subfield code="z">Proquest. Restricted to UCI.</marc:subfield>
 			<marc:subfield code="u">http://search.proquest.com/docview/<xsl:call-template name="lookupPQLink"><xsl:with-param name="isbn" select="$isbn"/></xsl:call-template></marc:subfield></marc:datafield>	
 		</xsl:when>
 		<xsl:otherwise>
-			<marc:datafield tag="856" ind1="4" ind2="8">
+			<marc:datafield tag="856" ind1="4" ind2="0">
 				<marc:subfield code="z">eScholarship. Due to student requested embargo, full text not available until <xsl:call-template name="format_embargo_enddate">
 					<xsl:with-param name="embargo_enddate_string" select="$embargo_end_date"/>
 				</xsl:call-template>
 				</marc:subfield>
 				<marc:subfield code="u"><xsl:call-template name="lookupEScholLink"><xsl:with-param name="isbn" select="$isbn"/></xsl:call-template></marc:subfield>
 			</marc:datafield>
-			<marc:datafield tag="856" ind1="4" ind2="8">
+			<marc:datafield tag="856" ind1="4" ind2="0">
 				<marc:subfield code="z">Proquest. Restricted to UCI. Due to student requested embargo, full text not available until <xsl:call-template name="format_embargo_enddate">
 					<xsl:with-param name="embargo_enddate_string" select="$embargo_end_date"/>
 				</xsl:call-template></marc:subfield>
