@@ -305,19 +305,19 @@
 	</xsl:variable>
 	<xsl:choose>
 		<xsl:when test="$embargo_code=0">
-			<marc:datafield tag="856" ind1="4" ind2="8"><marc:subfield code="z">Open Access via eScholarship</marc:subfield><marc:subfield code="u"><xsl:call-template name="lookupEScholLink"><xsl:with-param name="isbn" select="$isbn"/></xsl:call-template></marc:subfield></marc:datafield>
-			<marc:datafield tag="856" ind1="4" ind2="8"><marc:subfield code="z">Proquest. Restricted to UCI.</marc:subfield>
+			<marc:datafield tag="856" ind1="4" ind2="0"><marc:subfield code="z">Open Access via eScholarship</marc:subfield><marc:subfield code="u"><xsl:call-template name="lookupEScholLink"><xsl:with-param name="isbn" select="$isbn"/></xsl:call-template></marc:subfield></marc:datafield>
+			<marc:datafield tag="856" ind1="4" ind2="0"><marc:subfield code="z">Proquest. Restricted to UCI.</marc:subfield>
 			<marc:subfield code="u">http://search.proquest.com/docview/<xsl:call-template name="lookupPQLink"><xsl:with-param name="isbn" select="$isbn"/></xsl:call-template></marc:subfield></marc:datafield>	
 		</xsl:when>
 		<xsl:otherwise>
-			<marc:datafield tag="856" ind1="4" ind2="8">
+			<marc:datafield tag="856" ind1="4" ind2="0">
 				<marc:subfield code="z">eScholarship. Due to student requested embargo, full text not available until <xsl:call-template name="format_embargo_enddate">
 					<xsl:with-param name="embargo_enddate_string" select="$embargo_end_date"/>
 				</xsl:call-template>
 				</marc:subfield>
 				<marc:subfield code="u"><xsl:call-template name="lookupEScholLink"><xsl:with-param name="isbn" select="$isbn"/></xsl:call-template></marc:subfield>
 			</marc:datafield>
-			<marc:datafield tag="856" ind1="4" ind2="8">
+			<marc:datafield tag="856" ind1="4" ind2="0">
 				<marc:subfield code="z">Proquest. Restricted to UCI. Due to student requested embargo, full text not available until <xsl:call-template name="format_embargo_enddate">
 					<xsl:with-param name="embargo_enddate_string" select="$embargo_end_date"/>
 				</xsl:call-template></marc:subfield>
