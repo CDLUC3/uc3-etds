@@ -66,7 +66,7 @@ def set_logging(hostenv):
     formatter = logging.Formatter('%(asctime)s %(message)s')
     log2file = logging.FileHandler(app_configs[hostenv]['log_file'])
     log2email = logging.handlers.SMTPHandler(mailhost=('localhost'),
-                                             fromaddr="uc3@ucop.edu",
+                                             fromaddr="uc3-etds@cdlib.org",
                                              toaddrs=app_configs[hostenv]['error_notify'],
                                              subject=u"ETD Error!")
     log2file.setLevel(logging.INFO)
@@ -636,7 +636,7 @@ def deliver_via_email(files2deliver, campusabbr, hostenv):
     tmpcount = 0
     email_srv = smtplib.SMTP('localhost')
     to_address = campus_configs[campusabbr]['contact_email']
-    from_address = "uc3@ucop.edu"
+    from_address = "uc3-etds@cdlib.org"
     subject = campusabbr.upper()+" ETD report : " \
             + str(email.utils.formatdate(localtime=True)[:16])
     msg = MIMEMultipart()

@@ -63,7 +63,7 @@ def set_logging(hostenv):
     formatter = logging.Formatter('%(asctime)s %(message)s')
     log2file = logging.FileHandler(app_configs[hostenv]['log_file'])
     log2email = logging.handlers.SMTPHandler(mailhost=('localhost'),
-                                             fromaddr="uc3@ucop.edu",
+                                             fromaddr="uc3-etds@cdlib.org",
                                              toaddrs=app_configs[hostenv]['error_notify'],
                                              subject=u"ETD Error!")
     log2file.setLevel(logging.INFO)
