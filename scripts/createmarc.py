@@ -361,7 +361,9 @@ def check_if_ok_to_delete(zipfilename, hostenv):
         logging.exception("ERROR executing query in ETD DB %s", err)
     localid = etddb_cursor.fetchone()
     if localid is not None:
-        campusabbr = re.sub(r'(^.*PQETD:)([a-z]+)\d', r'\2', localid[0])
+        campusabbr = re.sub(r'(^.*PQETD:)([a-z]+)\d.*$', r'\2', localid[0])
+        print(campusabbr)
+        print(localid[0])
         if campusabbr == 'berkeley':
             campusabbr = 'ucb'
 # okay to delete if it's not one of the campuses that receive MARC records
