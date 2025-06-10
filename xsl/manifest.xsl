@@ -26,19 +26,39 @@
 <xsl:variable name="agreement_date" select="/DISS_submission/DISS_repository/DISS_agreement_decision_date"/>
 <xsl:variable name="local_IR_embargo_period" select="/DISS_submission/DISS_repository/DISS_delayed_release"/>
 <xsl:variable name="local_IR_access_option" select="/DISS_submission/DISS_repository/DISS_access_option"/>
-<xsl:variable name="vlocalid" select="/DISS_submission/DISS_description/@external_id"/>
-<xsl:variable name="localID">
-	<xsl:choose>
-		<xsl:when test="contains($vlocalid,'http://dissertations.umi.com/')">
-			<xsl:value-of select="substring-after($vlocalid,'http://dissertations.umi.com/')"/>
-	    </xsl:when>
-		<xsl:otherwise>
-			<xsl:value-of select="$vlocalid"/>
-		</xsl:otherwise>
-	</xsl:choose>
-</xsl:variable>
 <xsl:variable name="acceptDate" select="/DISS_submission/DISS_description/DISS_dates/DISS_accept_date"/>
 <xsl:variable name="sales_restrict_remove" select="/DISS_submission/DISS_restriction/DISS_sales_restriction/@remove"/>
+<xsl:variable name="vlocalid" select="/DISS_submission/DISS_description/@external_id"/>
+<!-- Old selection method for Local ID 
+<xsl:variable name="localID">
+        <xsl:choose>
+                <xsl:when test="contains($vlocalid,'http://dissertations.umi.com/')">
+                        <xsl:value-of select="substring-after($vlocalid,'http://dissertations.umi.com/')"/>
+            </xsl:when>
+                <xsl:otherwise>
+                        <xsl:value-of select="$vlocalid"/>
+                </xsl:otherwise>
+        </xsl:choose>
+</xsl:variable>
+-->
+<!-- Add variable for capturing DISS_binary name of PDF -->
+<xsl:template match="DISS_binary">
+  <xsl:variable name="ln" select="substring-before(text(), '_')"/>
+  <xsl:variable name="t1" select="substring(text(), string-length($ln)+2)"/>
+  <xsl:variable name="campus" select="substring-before($t1, '_')"/>
+  <xsl:variable name="t2" select="substring($t1, string-length($campus)+2)"/>
+  <xsl:variable name="code" select="substring-before($t2, '_')"/>
+  <xsl:variable name="t3" select="substring($t2, string-length($code)+2)"/>
+  <xsl:variable name="id" select="substring-before($t3, '.')"/>
+  <xsl:value-of select="$campus"/>
+  <xsl:value-of select="$id"/>
+</xsl:template>
+<xsl:variable name="DISS_binary">
+<xsl:apply-templates select="/DISS_submission/DISS_content/DISS_binary"/>
+</xsl:variable>
+<!-- end addition -->
+<!-- Supply value of DISS_binary to existing localID variable: -->
+<xsl:variable name="localID" select="$DISS_binary"/>
 <xsl:variable name="cc_license" select="/DISS_submission/DISS_creative_commons_license/DISS_abbreviation"/>
 <xsl:variable name="aux_file">
         <xsl:choose>
@@ -95,5 +115,5 @@
 <xsl:text>&#x9;</xsl:text>
 <xsl:value-of select="$aux_file"/>
 <xsl:text>&#xA;</xsl:text>
-</xsl:template>	
+</xsl:template> 
 </xsl:stylesheet>
