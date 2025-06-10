@@ -28,8 +28,8 @@
 <xsl:variable name="local_IR_access_option" select="/DISS_submission/DISS_repository/DISS_access_option"/>
 <xsl:variable name="acceptDate" select="/DISS_submission/DISS_description/DISS_dates/DISS_accept_date"/>
 <xsl:variable name="sales_restrict_remove" select="/DISS_submission/DISS_restriction/DISS_sales_restriction/@remove"/>
-<xsl:variable name="vlocalid" select="/DISS_submission/DISS_description/@external_id"/>
 <!-- Old selection method for Local ID 
+<xsl:variable name="vlocalid" select="/DISS_submission/DISS_description/@external_id"/>
 <xsl:variable name="localID">
         <xsl:choose>
                 <xsl:when test="contains($vlocalid,'http://dissertations.umi.com/')">
